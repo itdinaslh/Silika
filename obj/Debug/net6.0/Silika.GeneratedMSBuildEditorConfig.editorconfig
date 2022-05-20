@@ -1,0 +1,128 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Silika
+build_property.RootNamespace = Silika
+build_property.ProjectDir = /home/rangga/Data/Projects/DotNetCore/Silika/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /home/rangga/Data/Projects/DotNetCore/Silika
+build_property._RazorSourceGeneratorDebug = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Account/Denied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9EZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Kualitas/JenisPencemaran/AddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvS3VhbGl0YXMvSmVuaXNQZW5jZW1hcmFuL0FkZEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Kualitas/JenisPencemaran/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvS3VhbGl0YXMvSmVuaXNQZW5jZW1hcmFuL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Kualitas/NilaiPencemaran/AddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvS3VhbGl0YXMvTmlsYWlQZW5jZW1hcmFuL0FkZEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Kualitas/NilaiPencemaran/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvS3VhbGl0YXMvTmlsYWlQZW5jZW1hcmFuL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Master/Bidang/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFzdGVyL0JpZGFuZy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Master/Kabupaten/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFzdGVyL0thYnVwYXRlbi9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Master/Kecamatan/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFzdGVyL0tlY2FtYXRhbi9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Master/Kelurahan/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFzdGVyL0tlbHVyYWhhbi9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Shared/_Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Gb290ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Shared/_Header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19IZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Shared/_Master.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19NYXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Shared/_Rightbar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19SaWdodGJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Shared/_Sidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19TaWRlYmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Transport/JenisKendaraan/AddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNwb3J0L0plbmlzS2VuZGFyYWFuL0FkZEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Transport/JenisKendaraan/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNwb3J0L0plbmlzS2VuZGFyYWFuL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Transport/JenisTps/AddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNwb3J0L0plbmlzVHBzL0FkZEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Transport/JenisTps/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNwb3J0L0plbmlzVHBzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Transport/Merk/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHJhbnNwb3J0L01lcmsvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/WR/Jenis/AddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvV1IvSmVuaXMvQWRkRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/WR/Jenis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvV1IvSmVuaXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rangga/Data/Projects/DotNetCore/Silika/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-7r1o1rxzbe
