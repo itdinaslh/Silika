@@ -1207,24 +1207,31 @@
     ]
   },
   "packageFolders": {
-    "/home/rangga/.nuget/packages/": {}
+    "C:\\Users\\Rangga\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/rangga/Data/Projects/DotNetCore/Silika/Silika.csproj",
+      "projectUniqueName": "C:\\Projects\\NetCore\\Silika\\Silika.csproj",
       "projectName": "Silika",
-      "projectPath": "/home/rangga/Data/Projects/DotNetCore/Silika/Silika.csproj",
-      "packagesPath": "/home/rangga/.nuget/packages/",
-      "outputPath": "/home/rangga/Data/Projects/DotNetCore/Silika/obj/",
+      "projectPath": "C:\\Projects\\NetCore\\Silika\\Silika.csproj",
+      "packagesPath": "C:\\Users\\Rangga\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\NetCore\\Silika\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/rangga/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Rangga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1288,7 +1295,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/6.0.105/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
