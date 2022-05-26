@@ -1,10 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Dynamic.Core;
-using Silika.Entity;
 using Silika.Repository;
-using Microsoft.AspNetCore.Authorization;
 
 namespace Silika.Controllers.api;
 
@@ -12,10 +9,10 @@ namespace Silika.Controllers.api;
 [Route("[controller]")]
 // [Authorize(Roles = "SysAdmin")]
 public class BidangApiController : Controller {
-    private IBidangRepo repo;   
+    private readonly IBidangRepo _repo;   
 
     public BidangApiController(IBidangRepo bRepo) {
-        repo = bRepo;        
+        _repo = bRepo;        
     }
 
     #nullable disable
@@ -31,7 +28,7 @@ public class BidangApiController : Controller {
         int skip = start != null ? Convert.ToInt32(start) : 0;
         int recordsTotal = 0;
 
-        var init = repo.Bidangs;
+        var init = _repo.Bidangs;
 
         if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection))) {
             init = init.OrderBy(sortColumn + " " + sortColumnDirection);
@@ -47,7 +44,7 @@ public class BidangApiController : Controller {
 
         var result = await init.Skip(skip).Take(pageSize).ToListAsync();
 
-        var jsonData = new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = result};
+        var jsonData = new { draw, recordsFiltered = recordsTotal, recordsTotal, data = result};
         
         return Ok(jsonData);
     }
@@ -84,8 +81,8 @@ public class BidangApiController : Controller {
 
     
     [HttpGet("/api/master/bidang/getbyid")]
-    public async Task<JsonResult> GetDataByID(Guid bidangId) {
-        var data = await repo.Bidangs.Select(x => new {
+    public async Task<JsonResult> GetDataById(Guid bidangId) {
+        var data = await _repo.Bidangs.Select(x => new {
             bidangID = x.BidangID,
             namaBidang = x.NamaBidang,
             kepalaBidang = x.KepalaBidang

@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Silika.Entity;
 using Silika.Repository;
 using Silika.Helpers;
-using Silika.Models;
 
 namespace Silika.Controllers;
 
@@ -24,8 +23,8 @@ public class MerkController : Controller {
     public IActionResult Create() => PartialView("~/Views/Transport/Merk/AddEdit.cshtml", new MerkKendaraan());
 
     [HttpGet("/transport/merk-kendaraan/edit")]
-    public async Task<IActionResult> Edit(int merkID) => PartialView("~/Views/Transport/Merk/AddEdit.cshtml",
-        await repo.MerkKendaraans.FirstOrDefaultAsync(m => m.MerkID == merkID)
+    public async Task<IActionResult> Edit(int merkId) => PartialView("~/Views/Transport/Merk/AddEdit.cshtml",
+        await repo.MerkKendaraans.FirstOrDefaultAsync(m => m.MerkID == merkId)
     );
 
     [HttpPost("/transport/merk-kendaraan/save")]

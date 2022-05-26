@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\NetCore\\Silika\\Silika.csproj": {}
+    "/home/rangga/Data/Projects/DotNetCore/Silika/Silika.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\NetCore\\Silika\\Silika.csproj": {
+    "/home/rangga/Data/Projects/DotNetCore/Silika/Silika.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\NetCore\\Silika\\Silika.csproj",
+        "projectUniqueName": "/home/rangga/Data/Projects/DotNetCore/Silika/Silika.csproj",
         "projectName": "Silika",
-        "projectPath": "C:\\Projects\\NetCore\\Silika\\Silika.csproj",
-        "packagesPath": "C:\\Users\\Rangga\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\NetCore\\Silika\\obj\\",
+        "projectPath": "/home/rangga/Data/Projects/DotNetCore/Silika/Silika.csproj",
+        "packagesPath": "/home/rangga/.nuget/packages/",
+        "outputPath": "/home/rangga/Data/Projects/DotNetCore/Silika/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Rangga\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/rangga/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -89,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/6.0.105/RuntimeIdentifierGraph.json"
         }
       }
     }
