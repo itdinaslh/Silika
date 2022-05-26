@@ -29,6 +29,7 @@ services.AddDbContext<AppDbContext>(options => {
     services.AddScoped<IJenisPencemaranRepo, JenisPencemaranService>();
     services.AddScoped<INilaiPencemaranRepo, NilaiPencemaranService>();
     services.AddScoped<IMerkKendaraan, MerkKendaraanService>();
+    services.AddScoped<IKabupatenRepo, KabupatenService>();
 }
 
 services.AddAuthentication(options => {

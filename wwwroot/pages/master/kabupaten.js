@@ -16,7 +16,7 @@ function loadTable() {
         stateSave: true,
         orderMulti: false,
         ajax: {
-            url: "https://localhost:7177/api/wilayah/kabupaten",
+            url: "/api/master/kabupaten",
             type: "POST",
             dataType: "json"
         },
