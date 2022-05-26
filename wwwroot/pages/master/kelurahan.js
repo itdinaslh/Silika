@@ -16,7 +16,7 @@ function loadTable() {
         stateSave: true,
         orderMulti: false,
         ajax: {
-            url: "https://localhost:7177/api/wilayah/kelurahan",
+            url: "/api/master/kelurahan",
             type: "POST",
             dataType: "json"
         },
@@ -41,7 +41,7 @@ $(document).on('shown.bs.modal', function () {
         dropdownParent: $('#myModal'),
         allowClear: true,
         ajax: {
-            url: "/api/wilayah/provinsi/search",
+            url: "/api/master/provinsi/search",
             contentType: "application/json; charset=utf-8",
             data: function (params) {
                 var query = {

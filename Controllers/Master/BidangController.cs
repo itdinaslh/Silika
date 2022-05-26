@@ -1,23 +1,39 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication;
-// using Silika.Entity;
+using Microsoft.EntityFrameworkCore;
+using Silika.Entity;
+using Silika.Repository;
+using Silika.Helpers;
 
 namespace Silika.Controllers;
 
 [Authorize]
 public class BidangController : Controller {
+    private IBidangRepo repo;
+
+    public BidangController(IBidangRepo bRepo) => repo = bRepo;
+
     [HttpGet("/master/bidang")]
-    public async Task<IActionResult> Index() {
-        #nullable disable
-        string token = await HttpContext.GetTokenAsync("access_token");
-        return View("~/Views/Master/Bidang/Index.cshtml", token);
+    public IActionResult Index() {
+        #nullable disable        
+        return View("~/Views/Master/Bidang/Index.cshtml");
     }
 
-    // [HttpGet("/master/bidang/create")]
-    // public async Task<IActionResult> Create() {
-    //     var accessToken = await HttpContext.GetTokenAsync("access_token");
-    //     ViewBag.Token = accessToken;
-    //     return PartialView("~/Views/Master/Bidang/AddEdit.cshtml", new Bidang { BidangID = Guid.Empty });
-    // }
+    [HttpGet("/master/bidang/create")]
+    public IActionResult Create() => PartialView("/Views/Master/Bidang/AddEdit.cshtml", new Bidang { BidangID = Guid.Empty});
+
+    [HttpGet("/master/bidang/edit")]
+    public async Task<IActionResult> Edit(Guid bidangId) => PartialView("/Views/Master/Bidang/AddEdit.cshtml", 
+        await repo.Bidangs.FirstOrDefaultAsync(b => b.BidangID == bidangId));
+
+    [HttpPost("/master/bidang/save")]
+    public async Task<IActionResult> SaveBidangAsync(Bidang bidang) {
+        if (ModelState.IsValid) {
+            await repo.SaveBidangAsync(bidang);            
+            return Json(Result.Success());
+        } else {
+            return PartialView("~/Views/Master/Bidang/AddEdit.cshtml", bidang);
+        }
+    }
 }

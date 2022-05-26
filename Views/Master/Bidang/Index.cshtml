@@ -51,8 +51,7 @@
 
         <div class="row">
             <div class="col-12">
-                <button class="btn btn-primary showMe" style="margin-bottom:20px;" data-href="/master/bidang/create">Tambah Bidang</button>
-                <input type="hidden" id="bToken" value="@Model">
+                <button class="btn btn-primary showMe" style="margin-bottom:20px;" data-href="/master/bidang/create">Tambah Bidang</button>                
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Data Bidang</h4>
@@ -80,34 +79,7 @@
     <script src="~/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="~/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
     <script src="~/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="~/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
-    <script src="~/lib/signalr/dist/browser/signalr.min.js"></script>
+    <script src="~/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>    
     <script src="~/pages/master/bidang.js"></script>
     <script src="~/js/modalForm.js"></script>
-    <script>
-        Object.defineProperty(WebSocket, 'OPEN', { value: 1, });
-
-        var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:7177/hub/bidang").build();
-
-        async function start() {
-            try {
-                await connection.start();
-                console.log("SignalR Connected");
-            } catch(err) {
-                console.log(err);
-                setTimeout(start, 3000);
-            }
-        }
-
-        connection.on("TableUpdated", data => {
-            loadContent();
-        })
-
-        connection.onclose(async () => {
-            await start();
-        });
-
-        // start signalr connection
-        start();
-    </script>
 }

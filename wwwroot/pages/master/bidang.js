@@ -16,10 +16,7 @@ function loadTable() {
         filter: true,
         orderMulti: false,
         ajax: {
-            url: "https://localhost:7177/api/master/bidang",
-            headers: {
-                Authorization: 'Bearer ' + $('#bToken').val()
-            },
+            url: "/api/master/bidang",            
             type: "POST",
             dataType: "json"
         },

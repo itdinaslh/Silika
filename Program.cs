@@ -30,6 +30,9 @@ services.AddDbContext<AppDbContext>(options => {
     services.AddScoped<INilaiPencemaranRepo, NilaiPencemaranService>();
     services.AddScoped<IMerkKendaraan, MerkKendaraanService>();
     services.AddScoped<IKabupatenRepo, KabupatenService>();
+    services.AddScoped<IKecamatanRepo, KecamatanService>();
+    services.AddScoped<IKelurahanRepo, KelurahanService>();
+    services.AddScoped<IBidangRepo, BidangService>();
 }
 
 services.AddAuthentication(options => {
