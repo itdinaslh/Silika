@@ -1,0 +1,342 @@
+<div class="vertical-menu">
+    <div data-simplebar class="h-100">
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+            <!-- Left Menu Start -->
+            <ul class="metismenu list-unstyled" id="side-menu">
+                <li class="menu-title" data-key="t-menu">Menu</li>
+                <li>
+                    <a href="/">
+                        <i data-feather="clipboard"></i>
+                        <span data-key="t-dashboard">Welcome</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);"
+                        class="has-arrow">
+                        <i data-feather="grid"></i>
+                        <span data-key="t-apps">Administrator</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="javascript:void(0);">
+                                <span data-key="t-calendar">Setting Aplikasi</span>
+                            </a>
+                        </li>                        
+                        <li>
+                            <a href="javascript: void(0);"
+                                class="has-arrow">
+                                <span data-key="t-contacts">Data Referensi</span>
+                            </a>
+                            <ul class="sub-menu"
+                                aria-expanded="false">
+                                <li>
+                                    <a asp-action="Index" asp-controller="Kabupaten">Kota/Kabupaten</a>
+                                </li>
+                                <li>
+                                    <a asp-action="Index" asp-controller="Kecamatan">Kecamatan</a>
+                                </li>
+                                <li>
+                                    <a asp-action="Index" asp-controller="Kelurahan">Kelurahan</a>
+                                </li>
+                                <li>
+                                    <a asp-controller="Bidang" asp-action="Index">Bidang/UPT/Dinas</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);"
+                        class="has-arrow">
+                        <i data-feather="home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="javascript:void(0);">Transportasi Sampah</a>
+                        </li>
+                         <li>
+                            <a href="javascript:void(0);">Kegiatan Usaha</a>
+                        </li>
+                         <li>
+                            <a href="javascript:void(0);">Kualitas Lingkungan</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);"
+                        class="has-arrow">
+                        <i data-feather="file-text"></i>
+                        <span>Transportasi Sampah</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="javascript: void(0);"
+                                class="has-arrow">
+                                <span data-key="t-contacts">Data Referensi</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li>
+                                    <a asp-controller="Merk" asp-action="Index">Merk Kendaraan</a>
+                                </li>
+                               <li>
+                                    <a href="javascript:void(0);">Tipe Kendaraan</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Kendaraan</a>
+                                </li>
+                                <li>
+                                    <a asp-action="Index" asp-controller="JenisKendaraan">Jenis Kendaraan</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Sinkronisasi Kendaraan</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Driver Pengemudi</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Opr/Koordinator TPS</a>
+                                </li>
+                                <li>
+                                    <a asp-action="Index" asp-controller="JenisTps">Jenis TPS</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Lokasi TPS</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Bengkel</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Timbulan Sampah</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Lok Penanganan Sungai</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Koordinator LPS</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <span>Opr Transportasi</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li>
+                                    <a href="javascript:void(0);">Perawatan Kendaraan</a>
+                                </li>
+                               <li>
+                                    <a href="javascript:void(0);">KIR</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Uji Emisi</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Neraca TPS</a>
+                                </li>                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <span>Monitoring</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li>
+                                    <a href="javascript:void(0);">Kend. Sampah (Peta Dasar)</a>
+                                </li>
+                               <li>
+                                    <a href="javascript:void(0);">Kend. Sampah (Peta OSM)</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Antrian Bantargebang</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Timbulan Sampah</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Pemakaian BBM</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Histori Perjalanan</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Pemantauan Zona</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Pemantauan Kecepatan</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Notifikasi Perawatan</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <span>Laporan</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li>
+                                    <a href="javascript:void(0);">Rekap Neraca TPS</a>
+                                </li>
+                               <li>
+                                    <a href="javascript:void(0);">Peta TPS Neraca</a>
+                                </li>                      
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu-title mt-2" data-key="t-components">Others</li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="briefcase"></i>
+                        <span>Operasional Kendaraan</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="javascript:void(0);">Pembuatan SPJ</a>
+                        </li>
+                         <li>
+                            <a href="javascript:void(0);">Laporan SPJ</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="feather"></i>
+                        <span>Pengolahan Sampah B3</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <span>Data Referensi</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li>
+                                    <a href="javascript:void(0);">Periode</a>
+                                </li>                                                              
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <span>Pengelolaan Sampah B3</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li>
+                                    <a href="javascript:void(0);">Satuan Pelaksana</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Suku Dinas</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Manifes</a>
+                                </li>                                                           
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <span>Laporan</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li>
+                                    <a href="javascript:void(0);">Rekap B3 Satpel</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Rekap B3 Sudin</a>
+                                </li>                                                         
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="layers"></i>
+                        <span>Wajib Retribusi</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <span>Data Referensi</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li>
+                                    <a asp-action="Index" asp-controller="JenisWR">Jenis WR</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Operator WR</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Lokasi WR</a>
+                                </li>                                                           
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <span>Laporan</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li>
+                                    <a href="javascript:void(0);">WR Harian</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Bulanan</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Per Tanggal</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Data Belum Diinput</a>
+                                </li>                                                          
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="cloud-rain"></i>
+                        <span>Kualitas Lingkungan</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <span>Data Referensi</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li>
+                                    <a asp-controller="JenisPencemaran" asp-action="Index">Jenis Pencemaran</a>
+                                </li>
+                                <li>
+                                    <a asp-controller="NilaiPencemaran" asp-action="Index">Nilai Pencemaran Udara</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Sungai</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Periode Air Tanah</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Periode Air Situ Waduk</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Periode Air Sungai</a>
+                                </li>                                                   
+                                <li>
+                                    <a href="javascript:void(0);">Periode Air Laut</a>
+                                </li>   
+                                <li>
+                                    <a href="javascript:void(0);">Narasi Lingkungan</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>                    
+                </li>         
+            </ul>
+        </div>
+        <!-- Sidebar -->
+    </div>
+</div>
