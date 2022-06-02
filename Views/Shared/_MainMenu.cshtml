@@ -3,7 +3,7 @@
         <ul class="nav navbar-nav flex-row">
             <li class="nav-item me-auto">
                 <a class="navbar-brand" href="~/starter-kit/ltr/vertical-menu-template/">
-                    <span class="brand-logo">
+                    @* <span class="brand-logo">
                         <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24">
                             <defs>
                                 <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
@@ -26,7 +26,7 @@
                                     </g>
                                 </g>
                             </g>
-                        </svg>
+                        </svg> *@
                     </span>
                     <h2 class="brand-text">SILIKA</h2>
                 </a>
@@ -37,19 +37,91 @@
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class=" nav-item"><a class="d-flex align-items-center" href="index.html"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Home">Home</span></a>
+            <li class="nav-item active">
+                <a class="d-flex align-items-center" href="/dashboard">
+                    <i data-feather="home"></i>
+                    <span class="menu-title text-truncate" data-i18n="Home">Dashboard</span>
+                </a>
             </li>
-            <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="layout"></i><span class="menu-title text-truncate" data-i18n="Page Layouts">Page Layouts</span><span class="badge badge-light-danger rounded-pill ms-auto me-1">2</span></a>
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="#">
+                    <i data-feather="layout"></i>
+                    <span class="menu-title text-truncate" data-i18n="Administrator">Administrator</span>
+                </a>
                 <ul class="menu-content">
-                    <li><a class="d-flex align-items-center" href="layout-collapsed-menu.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Collapsed Menu">Collapsed Menu</span></a>
+                    <li>
+                        <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Data Referensi">Data Referensi</span></a>
+                        <ul class="menu-content">
+                            <li>
+                                <a href="#">Kota/Kabupaten</a>
+                            </li>
+                            <li>
+                                <a href="#">Kecamatan</a>
+                            </li>
+                            <li>
+                                <a href="#">Kelurahan</a>
+                            </li>
+                            <li>
+                                <a href="#">Bidang/UPT/Dinas</a>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="active"><a class="d-flex align-items-center" href="layout-full.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Layout Full">Layout Full</span></a>
+                    <li>
+                        <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Pusat Bantuan">Pusat Bantuan</span></a>
+                    </li>                    
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="d-flex align-items-center" href="#">
+                    <i data-feather="truck"></i>
+                    <span class="menu-title text-truncate" data-i18n="Transportasi Sampah">Transportasi Sampah</span>
+                </a>
+                <ul class="menu-content">
+                    <li>
+                        <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Data Referensi">Data Referensi</span></a>
+                        <ul class="menu-content">
+                            <li><a href="#">Merk Kendaraan</a></li>
+                            <li><a href="#">Tipe Kendaraan</a></li>
+                            <li><a href="#">Kendaraan</a></li>
+                            <li><a href="#">Jenis Kendaraan</a></li>
+                            <li><a href="#">Sinkronisasi Kendaraan</a></li>
+                            <li><a href="#">Opr/Koordinator TPS</a></li>
+                            <li><a href="#">Jenis TPS</a></li>
+                            <li><a href="#">Lokasi TPS</a></li>
+                            <li><a href="#">Bengkel</a></li>
+                            <li><a href="#">Timbulan Sampah</a></li>
+                            <li><a href="#">Lok. Penanganan Sungai</a></li>
+                            <li><a href="#">Koordinator LPS</a></li>
+                        </ul>
                     </li>
-                    <li><a class="d-flex align-items-center" href="layout-without-menu.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Without Menu">Without Menu</span></a>
+                    <li>
+                        <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Operasional Transportasi">Operasional Transportasi</span></a>
+                        <ul class="menu-content">
+                            <li><a href="#">Perawatan Kendaraan</a></li>
+                            <li><a href="#">KIR</a></li>
+                            <li><a href="#">Neraca TPS</a></li>
+                        </ul>
                     </li>
-                    <li><a class="d-flex align-items-center" href="layout-empty.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Layout Empty">Layout Empty</span></a>
+                    <li>
+                        <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Monitoring">Monitoring</span></a>
+                        <ul class="menu-content">
+                            <li><a href="#">Kendaraan Sampah (Peta Dasar)</a></li>
+                            <li><a href="#">Kendaraan Sampah (Peta OSM)</a></li>
+                            <li><a href="#">Antrian Bantargebang</a></li>
+                            <li><a href="#">Timbulan Sampah</a></li>
+                            <li><a href="#">Pemakaian BBM</a></li>
+                            <li><a href="#">History Perjalanan</a></li>
+                            <li><a href="#">Pemantauan Zona</a></li>
+                            <li><a href="#">Pemantauan Kecepatan</a></li>
+                            <li><a href="#">Notifikasi Perawatan</a></li>
+                        </ul>
                     </li>
-                    <li><a class="d-flex align-items-center" href="layout-blank.html"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Layout Blank">Layout Blank</span></a>
+                    <li>
+                        <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Laporan">Laporan</span></a>
+                        <ul class="menu-content">
+                            <li><a href="#">Rekap Neraca TPS</a></li>
+                            <li><a href="#">Peta Neraca TPS</a></li>
+                        </ul>
                     </li>
                 </ul>
             </li>

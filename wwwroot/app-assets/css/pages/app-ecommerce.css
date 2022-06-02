@@ -7,7 +7,7 @@
 
 .ecommerce-application .sidebar-shop {
   margin-top: 0.85rem;
-  width: 260px;
+  width: 300px;
   z-index: 998; }
 
 .ecommerce-application .sidebar-shop .filter-heading {
@@ -266,7 +266,7 @@
   position: relative; }
 
 .ecommerce-application .list-view .ecommerce-card .item-options .item-wrapper .item-cost .item-price {
-  color: #7367f0;
+  color: #FF7F2A;
   margin-bottom: 0; }
 
 .ecommerce-application .list-view .ecommerce-card .item-options .shipping {
