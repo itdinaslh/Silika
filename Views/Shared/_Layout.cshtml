@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+<head>
+    <partial name="_Head" />
+    @await RenderSectionAsync("styles", required: false)
+    
+</head>
+
+<body class="vertical-layout vertical-menu-modern  navbar-sticky footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="">
+    <!-- Header -->
+    <partial name="_Header" />    
+
+    <!-- Main Menu -->
+    <partial name="_MainMenu" />    
+
+    <!-- Content -->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+            @RenderBody()            
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+    <!-- Footer -->
+   <partial name="_Footer" />
+
+    <!-- Vendor JS -->
+    <script src="~/app-assets/vendors/js/vendors.min.js"></script>    
+
+    <!-- Page Vendor JS -->
+    @await RenderSectionAsync("vendorjs", required:false)    
+
+    <!-- Theme JS -->
+    <script src="~/app-assets/js/core/app-menu.js"></script>
+    <script src="~/app-assets/js/core/app.js"></script>    
+
+    <!-- Page JS -->
+    @await RenderSectionAsync("scripts", required: false)   
+
+    <script>
+        $(window).on('load', function() {
+            if (feather) {
+                feather.replace({
+                    width: 14,
+                    height: 14
+                });
+            }
+        })
+    </script>
+</body>
+
+</html>

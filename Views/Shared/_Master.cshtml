@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Silika | @ViewData["title"]</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Wajib Retribusi Dinas Lingkungan Hidup DKI Jakarta"
+            name="description" />
+        <meta content="DinasLH" name="author" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="~/assets/images/logo-dinas.ico">
+
+        <!-- preloader css -->
+        <link rel="stylesheet" href="~/assets/css/preloader.min.css"
+            type="text/css" />
+
+        <!-- Bootstrap Css -->
+        <link href="~/assets/css/bootstrap.min.css" id="bootstrap-style"
+            rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="~/assets/css/icons.min.css" rel="stylesheet" type="text/css"
+            />
+        <!-- App Css-->
+        <link href="~/assets/css/app.min.css" id="app-style" rel="stylesheet"
+            type="text/css" />
+
+        <!-- Custom Css -->
+        <link href="~/assets/css/custom.css" rel="stylesheet" type="text/css" />
+        @await RenderSectionAsync("styles", required: false)
+    </head>
+    <body>
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+            <partial name="_Header" />
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <partial name="_Sidebar" />
+            <!-- Left Sidebar End -->
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content" id="miniaresult">
+                @RenderBody()
+            </div>
+
+            <partial name="_Footer" />
+
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+        <!-- Right Sidebar -->
+        <partial name="_Rightbar" />
+        <!-- /Right-bar -->
+
+        <!-- Right bar overlay-->
+        <div class="rightbar-overlay"></div>
+
+        <!-- JAVASCRIPT -->
+        <script src="~/assets/libs/jquery/jquery.min.js"></script>
+        <script src="~/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="~/assets/libs/metismenu/metisMenu.min.js"></script>
+        <script src="~/assets/libs/simplebar/simplebar.min.js"></script>
+        <script src="~/assets/libs/node-waves/waves.min.js"></script>
+        <script src="~/assets/libs/feather-icons/feather.min.js"></script>
+        <!-- pace js -->
+        <script src="~/assets/libs/pace-js/pace.min.js"></script>
+        <script src="~/assets/js/app.js"></script>
+        @await RenderSectionAsync("scripts", required: false)
+    </body>
+
+</html>

@@ -1,0 +1,87 @@
+@{
+    Layout = "_Master";
+    ViewData["title"] = "Master Kecamatan";
+}
+
+@section styles {
+    <!-- DataTables -->
+    <link href="~/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Responsive datatables -->
+    <link href="~/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="~/lib/sweetalert/sweetalert2.min.css" />
+}
+
+<!--Modal Window-->
+<div id='myModal' class='modal fade' data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div id='myModalContent'></div>
+        </div>
+    </div>
+</div>
+
+<div class="page-content">
+    <div class="container-fluid">        
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center
+                    justify-content-between">
+                    <h4 class="mb-sm-0 font-size-18">Kecamatan</h4>
+
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="javascript:
+                                    void(0);">Master</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:
+                                    void(0);">Data Referensi</a></li>        
+                            <li class="breadcrumb-item active">Kecamatan</li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+            <div class="col-12">
+                <button class="btn btn-primary showMe" style="margin-bottom:20px;" data-href="/master/kecamatan/create">Tambah Kecamatan</button>
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Kecamatan</h4>
+                    </div>
+                    <div class="card-body">
+                        <table id="tblData" class="table table-bordered dt-responsive nowrap w-100">
+                            <thead>
+                                <tr>
+                                    <th>Kode</th>
+                                    <th>Nama Kecamatan</th>
+                                    <th>Kota/Kabupaten</th> 
+                                    <th>Provinsi</th>
+                                    <th>Latitude</th>
+                                    <th>Longitude</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/lib/sweetalert/sweetalert2.all.min.js"></script>
+    <!-- Required datatable js -->
+    <script src="~/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>    
+    <script src="~/pages/master/kecamatan.js"></script>
+    <script src="~/js/modalForm.js"></script>    
+}
