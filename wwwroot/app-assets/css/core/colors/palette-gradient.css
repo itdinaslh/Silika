@@ -110,7 +110,7 @@
 .btn-gradient-success {
   color: #fff;
   transition: all 0.2s ease;
-  background-image: linear-gradient(47deg, #054636, #08765b);
+  background-image: linear-gradient(47deg, #479C47, #60b660);
   background-repeat: repeat; }
 
 .bg-gradient-success:hover, .bg-gradient-success:active,
@@ -129,14 +129,14 @@
 .bg-gradient-success:active, .bg-gradient-success:focus,
 .btn-gradient-success:active,
 .btn-gradient-success:focus {
-  background-image: linear-gradient(47deg, #021611, #054636);
+  background-image: linear-gradient(47deg, #377937, #479C47);
   background-repeat: repeat; }
 
 .bg-gradient-info,
 .btn-gradient-info {
   color: #fff;
   transition: all 0.2s ease;
-  background-image: linear-gradient(47deg, #00cfe8, #1ce7ff);
+  background-image: linear-gradient(47deg, #00578C, #0077bf);
   background-repeat: repeat; }
 
 .bg-gradient-info:hover, .bg-gradient-info:active,
@@ -155,7 +155,7 @@
 .bg-gradient-info:active, .bg-gradient-info:focus,
 .btn-gradient-info:active,
 .btn-gradient-info:focus {
-  background-image: linear-gradient(47deg, #00a1b5, #00cfe8);
+  background-image: linear-gradient(47deg, #003759, #00578C);
   background-repeat: repeat; }
 
 .bg-gradient-warning,

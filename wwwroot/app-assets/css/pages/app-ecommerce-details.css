@@ -161,10 +161,10 @@
   box-shadow: 0 2px 4px 0 rgba(255, 127, 42, 0.4); }
 
 .ecommerce-application .product-color-options .selected .b-success {
-  border-color: #054636; }
+  border-color: #479C47; }
 
 .ecommerce-application .product-color-options .selected .b-success .filloption {
-  box-shadow: 0 2px 4px 0 rgba(5, 70, 54, 0.4); }
+  box-shadow: 0 2px 4px 0 rgba(71, 156, 71, 0.4); }
 
 .ecommerce-application .product-color-options .selected .b-danger {
   border-color: #ea5455; }
@@ -179,16 +179,16 @@
   box-shadow: 0 2px 4px 0 rgba(255, 159, 67, 0.4); }
 
 .ecommerce-application .product-color-options .selected .b-info {
-  border-color: #00cfe8; }
+  border-color: #00578C; }
 
 .ecommerce-application .product-color-options .selected .b-info .filloption {
-  box-shadow: 0 2px 4px 0 rgba(0, 207, 232, 0.4); }
+  box-shadow: 0 2px 4px 0 rgba(0, 87, 140, 0.4); }
 
 .ecommerce-application .product-color-options .b-primary .filloption {
   box-shadow: 0 2px 4px 0 rgba(255, 127, 42, 0.4); }
 
 .ecommerce-application .product-color-options .b-success .filloption {
-  box-shadow: 0 2px 4px 0 rgba(5, 70, 54, 0.4); }
+  box-shadow: 0 2px 4px 0 rgba(71, 156, 71, 0.4); }
 
 .ecommerce-application .product-color-options .b-danger .filloption {
   box-shadow: 0 2px 4px 0 rgba(234, 84, 85, 0.4); }
@@ -197,7 +197,7 @@
   box-shadow: 0 2px 4px 0 rgba(255, 159, 67, 0.4); }
 
 .ecommerce-application .product-color-options .b-info .filloption {
-  box-shadow: 0 2px 4px 0 rgba(0, 207, 232, 0.4); }
+  box-shadow: 0 2px 4px 0 rgba(0, 87, 140, 0.4); }
 
 @media (max-width: 767.98px) {
   .ecommerce-application .swiper-responsive-breakpoints.swiper-container .swiper-slide {

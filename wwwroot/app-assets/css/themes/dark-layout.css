@@ -620,7 +620,7 @@ body.dark-layout {
   background-color: #161d31; }
 
 .dark-layout .card-tiny-line-stats .apexcharts-series-markers .apexcharts-marker {
-  stroke: #00cfe8; }
+  stroke: #00578C; }
 
 .dark-layout .card-tiny-line-stats .apexcharts-series-markers:last-child .apexcharts-marker {
   fill: #283046; }
@@ -726,7 +726,7 @@ body.dark-layout {
 .dark-layout .was-validated .form-check-input.is-valid,
 .dark-layout .was-validated select.form-select:not(:focus):valid,
 .dark-layout .was-validated select.form-select:not(:focus).is-valid {
-  border-color: #054636 !important; }
+  border-color: #479C47 !important; }
 
 .dark-layout .wizard .steps ul .disabled a,
 .dark-layout .wizard .steps ul .done a {
