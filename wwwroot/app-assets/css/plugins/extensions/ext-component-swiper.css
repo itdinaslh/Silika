@@ -6,6 +6,9 @@
     Author: PIXINVENT
     Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
+.progress {
+  height: 1.5rem; }
+
 /* Swiper css */
 /* ---------- */
 /* swiper slide shadow */

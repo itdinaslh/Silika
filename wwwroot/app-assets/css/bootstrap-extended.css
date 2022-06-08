@@ -1,3 +1,6 @@
+.progress {
+  height: 1.5rem; }
+
 a:focus {
   outline: none; }
 
@@ -660,7 +663,7 @@ select:-webkit-autofill {
   z-index: 997; }
 
 .header-navbar.fixed-top, .header-navbar.floating-nav {
-  left: 300px; }
+  left: 320px; }
 
 .header-navbar[class*='bg-'] .navbar-nav .nav-item > a {
   color: #fff !important; }
@@ -682,14 +685,14 @@ select:-webkit-autofill {
   position: fixed;
   right: 0;
   margin: 1.3rem auto 0;
-  width: calc(100vw - (100vw - 100%) - calc(2rem * 2) - 300px);
+  width: calc(100vw - (100vw - 100%) - calc(2rem * 2) - 320px);
   border-radius: 0.428rem;
   z-index: 12; }
 
 .header-navbar.navbar-static-top {
   top: 0;
   right: 0;
-  left: 300px;
+  left: 320px;
   width: calc(100vw - (100vw - 100%) - 300px);
   background: transparent;
   box-shadow: none !important; }

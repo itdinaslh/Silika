@@ -1,3 +1,6 @@
+.progress {
+  height: 1.5rem; }
+
 .faq-search {
   background-size: cover;
   background-color: rgba(255, 127, 42, 0.12) !important; }

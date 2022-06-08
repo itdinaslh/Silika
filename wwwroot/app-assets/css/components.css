@@ -1,5 +1,8 @@
+.progress {
+  height: 1.5rem; }
+
 html {
-  font-size: 12px;
+  font-size: 13px;
   height: 100%;
   letter-spacing: 0.01rem;
   /*
@@ -20,7 +23,7 @@ html .content {
   transition: 300ms ease all;
   backface-visibility: hidden;
   min-height: calc(100% - 3.35rem);
-  margin-left: 300px; }
+  margin-left: 320px; }
 
 html .content.app-content {
   padding: calc(2rem + 4.45rem + 1.3rem) 2rem 0; }
@@ -799,7 +802,7 @@ footer.footer-border {
 
 .main-menu .navbar-header {
   height: 100%;
-  width: 300px;
+  width: 320px;
   height: 4.45rem;
   position: relative;
   padding: 0.35rem 1rem 0.3rem 1.64rem;
@@ -3108,6 +3111,9 @@ tr.group {
     padding-left: 0.75rem; }
   div.dataTables_wrapper {
     overflow: scroll; } }
+
+.progress {
+  height: 1.5rem; }
 
 /* Bootstrap Touchspin */
 .bootstrap-touchspin.input-group {

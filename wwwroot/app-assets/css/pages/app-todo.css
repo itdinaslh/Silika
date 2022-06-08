@@ -1,9 +1,12 @@
+.progress {
+  height: 1.5rem; }
+
 .todo-application .content-area-wrapper {
   border: 1px solid #ebe9f1;
   border-radius: 0.428rem; }
 
 .todo-application .content-area-wrapper .sidebar .todo-sidebar {
-  width: 300px;
+  width: 320px;
   height: inherit;
   display: flex;
   background-color: #fff;
@@ -44,7 +47,7 @@
   padding-bottom: 0; }
 
 .todo-application .content-area-wrapper .content-right {
-  width: calc(100% - 300px);
+  width: calc(100% - 320px);
   border-left: 1px solid #ebe9f1; }
 
 .todo-application .content-area-wrapper .content-right .todo-app-list {

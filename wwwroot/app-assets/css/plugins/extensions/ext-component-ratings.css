@@ -1,3 +1,6 @@
+.progress {
+  height: 1.5rem; }
+
 .jq-ry-container:not(.multi-color-ratings) .jq-ry-normal-group i,
 .jq-ry-container:not(.multi-color-ratings) .jq-ry-normal-group svg {
   fill: #babfc7; }

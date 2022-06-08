@@ -1,3 +1,6 @@
+.progress {
+  height: 1.5rem; }
+
 .bs-stepper {
   background-color: #fff;
   box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1);

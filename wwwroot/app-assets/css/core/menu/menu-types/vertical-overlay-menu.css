@@ -8,19 +8,22 @@
     Author: PIXINVENT
     Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
+.progress {
+  height: 1.5rem; }
+
 .vertical-overlay-menu .content {
   margin-left: 0; }
 
 .vertical-overlay-menu .navbar .navbar-header {
   float: left;
-  width: 300px; }
+  width: 320px; }
 
 .vertical-overlay-menu .main-menu, .vertical-overlay-menu.menu-hide .main-menu {
   opacity: 0;
   transform: translate3d(0, 0, 0);
   transition: width 0.25s, opacity 0.25s, transform 0.25s;
-  width: 300px;
-  left: -300px; }
+  width: 320px;
+  left: -320px; }
 
 .vertical-overlay-menu .main-menu .navigation > li > a > svg,
 .vertical-overlay-menu .main-menu .navigation > li > a > i {
@@ -58,5 +61,5 @@
 
 .vertical-overlay-menu.menu-open .main-menu {
   opacity: 1;
-  transform: translate3d(300px, 0, 0);
+  transform: translate3d(320px, 0, 0);
   transition: width 0.25s, opacity 0.25s, transform 0.25s; }

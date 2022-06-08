@@ -1,3 +1,6 @@
+.progress {
+  height: 1.5rem; }
+
 .chat-app-window .user-chats {
   background-color: #f2f0f7;
   padding: 1rem;

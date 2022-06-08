@@ -1,3 +1,6 @@
+.progress {
+  height: 1.5rem; }
+
 .fc .fc-toolbar {
   flex-wrap: wrap;
   flex-direction: row !important; }

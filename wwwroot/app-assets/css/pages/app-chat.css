@@ -1,3 +1,6 @@
+.progress {
+  height: 1.5rem; }
+
 .chat-application .content-area-wrapper {
   border: 1px solid #ebe9f1;
   border-radius: 0.428rem; }

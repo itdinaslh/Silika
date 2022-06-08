@@ -1,3 +1,6 @@
+.progress {
+  height: 1.5rem; }
+
 .noUi-target {
   background-color: rgba(255, 127, 42, 0.12);
   border-width: 0;

@@ -1,3 +1,6 @@
+.progress {
+  height: 1.5rem; }
+
 .swal2-container .swal2-popup {
   border-radius: 0.428rem;
   padding-bottom: 1.5rem; }
