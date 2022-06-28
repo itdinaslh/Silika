@@ -1,6 +1,9 @@
 .progress {
   height: 1.5rem; }
 
+.dark-layout .header-navbar {
+  background-color: #054636; }
+
 .jq-ry-container:not(.multi-color-ratings) .jq-ry-normal-group i,
 .jq-ry-container:not(.multi-color-ratings) .jq-ry-normal-group svg {
   fill: #babfc7; }

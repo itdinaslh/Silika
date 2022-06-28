@@ -1,6 +1,9 @@
 .progress {
   height: 1.5rem; }
 
+.dark-layout .header-navbar {
+  background-color: #054636; }
+
 .file-manager-application .sidebar-file-manager {
   width: 300px;
   height: 100%;

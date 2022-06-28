@@ -1,29 +1,43 @@
 @{
-    Layout = "_Master";
+    Layout = "_Layout";
     ViewData["title"] = "Master Kelurahan";
 }
 
-@section styles {
+@section vendorcss {
     <!-- DataTables -->
-    <link href="~/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-
-    <!-- Responsive datatables -->
-    <link href="~/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/responsive.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/buttons.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/rowGroup.bootstrap5.min.css">
     <link rel="stylesheet" href="~/lib/sweetalert/sweetalert2.min.css" />
 }
 
-<!--Modal Window-->
-<div id='myModal' class='modal fade' data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div id='myModalContent'></div>
+<div class="content-body">
+    <section id="basic-datatable">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <table id="tblData" class="datatables-basic table">
+                            <thead>
+                                <tr>
+                                    <th>Kode</th>
+                                    <th>Nama Kelurahan</th>
+                                    <th>Nama Kecamatan</th>
+                                    <th>Kota/Kabupaten</th> 
+                                    <th>Provinsi</th>                                    
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>                    
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 </div>
 
-<div class="page-content">
+@* <div class="page-content">
     <div class="container-fluid">        
         <!-- start page title -->
         <div class="row">
@@ -72,15 +86,18 @@
             </div>
         </div>
     </div>
-</div>
+</div> *@
 
-@section scripts {
+@section vendorjs {
     <script src="~/lib/sweetalert/sweetalert2.all.min.js"></script>
     <!-- Required datatable js -->
-    <script src="~/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="~/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="~/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="~/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>    
+    <script src="~/app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js"></script>
+    <script src="~/app-assets/vendors/js/tables/datatable/dataTables.bootstrap5.min.js"></script>
+    <script src="~/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js"></script>
+    <script src="~/app-assets/vendors/js/tables/datatable/responsive.bootstrap5.min.js"></script>    
+}
+
+@section scripts {    
     <script src="~/pages/master/kelurahan.js"></script>
     <script src="~/js/modalForm.js"></script>    
 }

@@ -1,6 +1,9 @@
 .progress {
   height: 1.5rem; }
 
+.dark-layout .header-navbar {
+  background-color: #054636; }
+
 .shepherd-element {
   border-radius: 0.357rem;
   width: 350px; }

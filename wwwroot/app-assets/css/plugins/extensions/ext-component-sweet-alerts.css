@@ -1,6 +1,9 @@
 .progress {
   height: 1.5rem; }
 
+.dark-layout .header-navbar {
+  background-color: #054636; }
+
 .swal2-container .swal2-popup {
   border-radius: 0.428rem;
   padding-bottom: 1.5rem; }

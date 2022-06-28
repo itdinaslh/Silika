@@ -1,6 +1,9 @@
 .progress {
   height: 1.5rem; }
 
+.dark-layout .header-navbar {
+  background-color: #054636; }
+
 a:focus {
   outline: none; }
 
@@ -197,23 +200,23 @@ textarea.form-control-lg {
 
 .input-group:not(.bootstrap-touchspin):focus-within .form-control.is-valid,
 .input-group:not(.bootstrap-touchspin):focus-within .input-group-text.is-valid {
-  border-color: #479C47; }
+  border-color: #145e0c; }
 
 .input-group:not(.bootstrap-touchspin):focus-within .form-control.is-invalid,
 .input-group:not(.bootstrap-touchspin):focus-within .input-group-text.is-invalid {
-  border-color: #ea5455; }
+  border-color: #ab0011; }
 
 .input-group.is-valid .input-group-text {
-  border-color: #479C47 !important; }
+  border-color: #145e0c !important; }
 
 .input-group.is-valid:not(.bootstrap-touchspin):focus-within .input-group-text {
-  border-color: #479C47; }
+  border-color: #145e0c; }
 
 .input-group.is-invalid .input-group-text {
-  border-color: #ea5455 !important; }
+  border-color: #ab0011 !important; }
 
 .input-group.is-invalid:not(.bootstrap-touchspin):focus-within .input-group-text {
-  border-color: #ea5455; }
+  border-color: #ab0011; }
 
 .input-group.disabled .input-group-text {
   background-color: #efefef; }
@@ -242,7 +245,7 @@ textarea.form-control-lg {
   border-right: 0; }
 
 .input-group-merge .form-control.is-valid .input-group-text {
-  border-color: #479C47; }
+  border-color: #145e0c; }
 
 .form-check:not(.form-switch) .form-check-input[type='checkbox']:checked {
   background-size: 65%; }

@@ -1,6 +1,9 @@
 .progress {
   height: 1.5rem; }
 
+.dark-layout .header-navbar {
+  background-color: #054636; }
+
 .ecommerce-application .app-ecommerce-details .product-img {
   width: 600px; }
 
@@ -55,8 +58,8 @@
   margin-bottom: 1.2rem; }
 
 .ecommerce-application .app-ecommerce-details .btn-wishlist .text-danger {
-  color: #ea5455;
-  fill: #ea5455; }
+  color: #ab0011;
+  fill: #ab0011; }
 
 .ecommerce-application .app-ecommerce-details .btn-share .btn-icon ~ .dropdown-menu {
   min-width: 3rem; }
@@ -164,16 +167,16 @@
   box-shadow: 0 2px 4px 0 rgba(255, 127, 42, 0.4); }
 
 .ecommerce-application .product-color-options .selected .b-success {
-  border-color: #479C47; }
+  border-color: #145e0c; }
 
 .ecommerce-application .product-color-options .selected .b-success .filloption {
-  box-shadow: 0 2px 4px 0 rgba(71, 156, 71, 0.4); }
+  box-shadow: 0 2px 4px 0 rgba(20, 94, 12, 0.4); }
 
 .ecommerce-application .product-color-options .selected .b-danger {
-  border-color: #ea5455; }
+  border-color: #ab0011; }
 
 .ecommerce-application .product-color-options .selected .b-danger .filloption {
-  box-shadow: 0 2px 4px 0 rgba(234, 84, 85, 0.4); }
+  box-shadow: 0 2px 4px 0 rgba(171, 0, 17, 0.4); }
 
 .ecommerce-application .product-color-options .selected .b-warning {
   border-color: #ff9f43; }
@@ -191,10 +194,10 @@
   box-shadow: 0 2px 4px 0 rgba(255, 127, 42, 0.4); }
 
 .ecommerce-application .product-color-options .b-success .filloption {
-  box-shadow: 0 2px 4px 0 rgba(71, 156, 71, 0.4); }
+  box-shadow: 0 2px 4px 0 rgba(20, 94, 12, 0.4); }
 
 .ecommerce-application .product-color-options .b-danger .filloption {
-  box-shadow: 0 2px 4px 0 rgba(234, 84, 85, 0.4); }
+  box-shadow: 0 2px 4px 0 rgba(171, 0, 17, 0.4); }
 
 .ecommerce-application .product-color-options .b-warning .filloption {
   box-shadow: 0 2px 4px 0 rgba(255, 159, 67, 0.4); }

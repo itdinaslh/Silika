@@ -1,6 +1,9 @@
 .progress {
   height: 1.5rem; }
 
+.dark-layout .header-navbar {
+  background-color: #054636; }
+
 .flatpickr-calendar .flatpickr-day {
   color: #6e6b7b; }
 

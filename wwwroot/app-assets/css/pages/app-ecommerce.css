@@ -1,6 +1,9 @@
 .progress {
   height: 1.5rem; }
 
+.dark-layout .header-navbar {
+  background-color: #054636; }
+
 .ecommerce-application .content-body {
   position: relative; }
 
@@ -151,7 +154,7 @@
 .ecommerce-application .ecommerce-card .btn-wishlist svg.text-danger,
 .ecommerce-application .ecommerce-card .btn-cart i.text-danger,
 .ecommerce-application .ecommerce-card .btn-cart svg.text-danger {
-  fill: #ea5455; }
+  fill: #ab0011; }
 
 .ecommerce-application .grid-view:not(.wishlist-items),
 .ecommerce-application .list-view:not(.wishlist-items) {

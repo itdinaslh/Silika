@@ -1,6 +1,9 @@
 .progress {
   height: 1.5rem; }
 
+.dark-layout .header-navbar {
+  background-color: #054636; }
+
 html {
   font-size: 13px;
   height: 100%;
@@ -430,7 +433,7 @@ footer.footer span svg {
   width: 1.51rem;
   font-size: 1.51rem;
   margin-left: 0.5rem;
-  color: #ea5455; }
+  color: #ab0011; }
 
 footer.footer .scroll-top {
   padding: 0.81rem 0.83rem; }
@@ -949,10 +952,10 @@ footer.footer-border {
   border-width: 2px; }
 
 .avatar .avatar-status-online {
-  background-color: #479C47; }
+  background-color: #145e0c; }
 
 .avatar .avatar-status-busy {
-  background-color: #ea5455; }
+  background-color: #ab0011; }
 
 .avatar .avatar-status-away {
   background-color: #ff9f43; }
@@ -2400,7 +2403,7 @@ footer.footer-border {
   z-index: 1031; }
 
 .buy-now .btn {
-  box-shadow: 0 1px 20px 1px #ea5455 !important; }
+  box-shadow: 0 1px 20px 1px #ab0011 !important; }
 
 .buy-now .btn:hover {
   box-shadow: none !important; }
@@ -3114,6 +3117,9 @@ tr.group {
 
 .progress {
   height: 1.5rem; }
+
+.dark-layout .header-navbar {
+  background-color: #054636; }
 
 /* Bootstrap Touchspin */
 .bootstrap-touchspin.input-group {

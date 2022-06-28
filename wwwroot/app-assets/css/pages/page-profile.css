@@ -1,6 +1,9 @@
 .progress {
   height: 1.5rem; }
 
+.dark-layout .header-navbar {
+  background-color: #054636; }
+
 #user-profile {
   /*-------------profile header section---------*/
   /*-------- profile info section --------*/ }
@@ -41,8 +44,8 @@
   stroke: #ff9f43; }
 
 #user-profile #profile-info .profile-likes {
-  fill: #ea5455;
-  stroke: #ea5455; }
+  fill: #ab0011;
+  stroke: #ab0011; }
 
 #user-profile #profile-info .profile-polls-info .progress {
   height: 0.42rem; }

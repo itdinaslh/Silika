@@ -1,6 +1,9 @@
 .progress {
   height: 1.5rem; }
 
+.dark-layout .header-navbar {
+  background-color: #054636; }
+
 .invoice-preview .invoice-padding,
 .invoice-edit .invoice-padding,
 .invoice-add .invoice-padding {

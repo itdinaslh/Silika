@@ -83,16 +83,16 @@
   border-color: #82868b !important; }
 
 .slider-success {
-  background-color: rgba(71, 156, 71, 0.12); }
+  background-color: rgba(20, 94, 12, 0.12); }
 
 .slider-success .noUi-connect {
-  background: #479C47 !important; }
+  background: #145e0c !important; }
 
 .slider-success.noUi-connect {
-  background: #479C47 !important; }
+  background: #145e0c !important; }
 
 .slider-success .noUi-handle {
-  border-color: #479C47 !important; }
+  border-color: #145e0c !important; }
 
 .slider-info {
   background-color: rgba(0, 87, 140, 0.12); }
@@ -119,13 +119,13 @@
   border-color: #ff9f43 !important; }
 
 .slider-danger {
-  background-color: rgba(234, 84, 85, 0.12); }
+  background-color: rgba(171, 0, 17, 0.12); }
 
 .slider-danger .noUi-connect {
-  background: #ea5455 !important; }
+  background: #ab0011 !important; }
 
 .slider-danger.noUi-connect {
-  background: #ea5455 !important; }
+  background: #ab0011 !important; }
 
 .slider-danger .noUi-handle {
-  border-color: #ea5455 !important; }
+  border-color: #ab0011 !important; }

@@ -1,6 +1,9 @@
 .progress {
   height: 1.5rem; }
 
+.dark-layout .header-navbar {
+  background-color: #054636; }
+
 .dark-layout {
   /********* COMPONENTS *********/
   /* Accordion */
@@ -686,7 +689,7 @@ body.dark-layout {
   color: #b4b7bd !important; }
 
 .dark-layout .char-textarea.max-limit {
-  color: #ea5455 !important; }
+  color: #ab0011 !important; }
 
 .dark-layout .form-check-input:not(:checked) {
   background-color: #283046;
@@ -721,7 +724,7 @@ body.dark-layout {
 .dark-layout .was-validated .form-check-input.is-invalid,
 .dark-layout .was-validated select.form-select:not(:focus):invalid,
 .dark-layout .was-validated select.form-select:not(:focus).is-valid {
-  border-color: #ea5455 !important; }
+  border-color: #ab0011 !important; }
 
 .dark-layout .was-validated .form-control:valid,
 .dark-layout .was-validated .form-control.is-valid,
@@ -729,7 +732,7 @@ body.dark-layout {
 .dark-layout .was-validated .form-check-input.is-valid,
 .dark-layout .was-validated select.form-select:not(:focus):valid,
 .dark-layout .was-validated select.form-select:not(:focus).is-valid {
-  border-color: #479C47 !important; }
+  border-color: #145e0c !important; }
 
 .dark-layout .wizard .steps ul .disabled a,
 .dark-layout .wizard .steps ul .done a {

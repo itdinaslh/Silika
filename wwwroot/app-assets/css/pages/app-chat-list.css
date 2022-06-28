@@ -1,6 +1,9 @@
 .progress {
   height: 1.5rem; }
 
+.dark-layout .header-navbar {
+  background-color: #054636; }
+
 .chat-app-window .user-chats {
   background-color: #f2f0f7;
   padding: 1rem;

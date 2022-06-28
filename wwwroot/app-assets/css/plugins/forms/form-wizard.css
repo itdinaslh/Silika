@@ -1,6 +1,9 @@
 .progress {
   height: 1.5rem; }
 
+.dark-layout .header-navbar {
+  background-color: #054636; }
+
 .bs-stepper {
   background-color: #fff;
   box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1);

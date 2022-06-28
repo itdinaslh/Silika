@@ -1,6 +1,9 @@
 .progress {
   height: 1.5rem; }
 
+.dark-layout .header-navbar {
+  background-color: #054636; }
+
 .todo-application .content-area-wrapper {
   border: 1px solid #ebe9f1;
   border-radius: 0.428rem; }
@@ -147,7 +150,7 @@
   visibility: visible; }
 
 .todo-application form .error:not(li):not(input) {
-  color: #ea5455;
+  color: #ab0011;
   font-size: 85%;
   margin-top: 0.25rem; }
 

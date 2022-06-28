@@ -1,6 +1,9 @@
 .progress {
   height: 1.5rem; }
 
+.dark-layout .header-navbar {
+  background-color: #054636; }
+
 /* Set dropdown font-families */
 .ql-toolbar .ql-font span[data-label='Sailec Light']::before {
   font-family: 'Sailec Light'; }
