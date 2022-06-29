@@ -30,6 +30,7 @@ public class MerkKendaraanApiController : Controller {
 
         var init = repo.MerkKendaraans.Select(x => new {
             merkID = x.MerkID,
+            kodeMerk = x.KodeMerk,
             namaMerk = x.NamaMerk
         });
 

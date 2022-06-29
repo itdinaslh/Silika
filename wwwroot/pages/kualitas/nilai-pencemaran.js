@@ -27,7 +27,7 @@ function loadTable() {
             { data: "akhir", name: "akhir", autoWidth: true },
             {
                 data: 'nilaiID',
-                render: function (data, type, row) { return "<button type='button' class='btn btn-sm btn-outline-success mr-2 showMe' style='width:100%;' data-href='/kualitas-lingkungan/nilai-pencemaran/edit/?nilaiID=" + row.nilaiID + "'> Edit</button>" }
+                render: function (data, type, row) { return "<button type='button' class='btn btn-sm btn-success mr-2 showMe' style='width:100%;' data-href='/kualitas-lingkungan/nilai-pencemaran/edit/?nilaiID=" + row.nilaiID + "'> Edit</button>" }
             }
         ],
         order: [[0, "desc"]]

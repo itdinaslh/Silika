@@ -30,6 +30,7 @@ public class JenisKendaraanApiController : Controller {
 
         var init = repo.JenisKendaraans.Select(x => new {
             jenisID = x.JenisID,
+            kodeJenis = x.KodeJenis,
             namaJenis = x.NamaJenis
         });
 

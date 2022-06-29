@@ -3,14 +3,12 @@
     ViewData["title"] = "Jenis Kendaraan";
 }
 
-@section styles {
+@section vendorcss {
     <!-- DataTables -->
-    <link href="~/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-
-    <!-- Responsive datatables -->
-    <link href="~/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/responsive.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/buttons.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/rowGroup.bootstrap5.min.css">
     <link rel="stylesheet" href="~/lib/sweetalert/sweetalert2.min.css" />
 }
 
@@ -53,13 +51,20 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Jenis Kendaraan</h4>
+                        <div class="dropdown chart-dropdown">
+                            <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-bs-toggle="dropdown"></i>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <button class="dropdown-item">Tambah Jenis</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
                         <table id="tblData" class="table table-bordered dt-responsive nowrap w-100">
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nama Jenis</th>
+                                    <th>Kode Jenis Kendaraan</th>
+                                    <th>Nama Jenis Kendaraan</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -71,13 +76,16 @@
     </div>
 </div>
 
-@section scripts {
+@section vendorjs {
     <script src="~/lib/sweetalert/sweetalert2.all.min.js"></script>
     <!-- Required datatable js -->
-    <script src="~/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="~/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="~/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="~/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>    
+    <script src="~/app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js"></script>
+    <script src="~/app-assets/vendors/js/tables/datatable/dataTables.bootstrap5.min.js"></script>
+    <script src="~/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js"></script>
+    <script src="~/app-assets/vendors/js/tables/datatable/responsive.bootstrap5.min.js"></script>    
+}
+
+@section scripts {       
     <script src="~/pages/transport/jenis-kendaraan.js"></script>
     <script src="~/js/modalForm.js"></script>    
 }

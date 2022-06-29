@@ -18,6 +18,7 @@ public class JenisKendaraanService : IJenisKendaraanRepo {
             await context.AddAsync(jenis);
         } else {
             JenisKendaraan jns = await context.JenisKendaraans.FirstOrDefaultAsync(j => j.JenisID == jenis.JenisID);
+            jns.KodeJenis = jenis.KodeJenis;
             jns.NamaJenis = jenis.NamaJenis;
             jns.UpdatedAt = DateTime.Now;
 

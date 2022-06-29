@@ -1,16 +1,14 @@
 @{
-    Layout = "_Master";
-    ViewData["title"] = "Jenis Pencemaran";
+    Layout = "_Layout";
+    ViewBag.Title = "Jenis Pencemaran";
 }
 
-@section styles {
+@section vendorcss {
     <!-- DataTables -->
-    <link href="~/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-
-    <!-- Responsive datatables -->
-    <link href="~/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/responsive.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/buttons.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/rowGroup.bootstrap5.min.css">
     <link rel="stylesheet" href="~/lib/sweetalert/sweetalert2.min.css" />
 }
 
@@ -49,7 +47,7 @@
 
         <div class="row">
             <div class="col-12">
-                <button class="btn btn-primary showMe" style="margin-bottom:20px;" data-href="/kualitas-lingkungan/jenis-pencemaran/create">Tambah Jenis Pencemaran</button>
+                <button class="btn btn-primary showMe" style="margin-bottom:20px; margin-top: 20px;" data-href="/kualitas-lingkungan/jenis-pencemaran/create">Tambah Jenis Pencemaran</button>
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Jenis Pencemaran</h4>
@@ -71,13 +69,16 @@
     </div>
 </div>
 
-@section scripts {
+@section vendorjs {
     <script src="~/lib/sweetalert/sweetalert2.all.min.js"></script>
     <!-- Required datatable js -->
-    <script src="~/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="~/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="~/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="~/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>    
+    <script src="~/app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js"></script>
+    <script src="~/app-assets/vendors/js/tables/datatable/dataTables.bootstrap5.min.js"></script>
+    <script src="~/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js"></script>
+    <script src="~/app-assets/vendors/js/tables/datatable/responsive.bootstrap5.min.js"></script>    
+}
+
+@section scripts {    
     <script src="~/pages/kualitas/jenis-pencemaran.js"></script>
     <script src="~/js/modalForm.js"></script>    
 }

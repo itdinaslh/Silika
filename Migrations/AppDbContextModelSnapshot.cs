@@ -17,7 +17,7 @@ namespace Silika.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.4")
+                .HasAnnotation("ProductVersion", "6.0.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -58,6 +58,11 @@ namespace Silika.Migrations
 
                     b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("KodeJenis")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
 
                     b.Property<string>("NamaJenis")
                         .IsRequired()
@@ -248,6 +253,10 @@ namespace Silika.Migrations
 
                     b.Property<bool?>("IsActive")
                         .HasColumnType("boolean");
+
+                    b.Property<string>("KodeMerk")
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
 
                     b.Property<string>("NamaMerk")
                         .IsRequired()

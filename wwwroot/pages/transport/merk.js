@@ -22,10 +22,11 @@ function loadTable() {
         },
         columns: [
             { data: "merkID", name: "merkID", autoWidth: true },
+            { data: "kodeMerk", name: "kodeMerk", autoWidth: true },
             { data: "namaMerk", name: "namaMerk", autoWidth: true },
             {
                 data: 'merkID',
-                render: function (data, type, row) { return "<button type='button' class='btn btn-sm btn-outline-success mr-2 showMe' style='width:100%;' data-href='/transport/merk-kendaraan/edit/?jenisId=" + row.merkID + "'> Edit</button>" }
+                render: function (data, type, row) { return "<button type='button' class='btn btn-sm btn-success mr-2 showMe' style='width:100%;' data-href='/transport/merk-kendaraan/edit/?merkId=" + row.merkID + "'> Edit</button>" }
             }
         ],
         order: [[0, "desc"]]

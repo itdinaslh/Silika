@@ -64,7 +64,9 @@
                     <li>
                         <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Data Referensi">Data Referensi</span></a>
                         <ul class="menu-content">
-                            <li><a href="#">Merk Kendaraan</a></li>
+                            <li class='@(ViewBag.Title == "Merk Kendaraan" ? "active" : "")'>
+                                <a asp-controller="Merk" asp-action="Index">Merk Kendaraan</a>
+                            </li>
                             <li><a href="#">Tipe Kendaraan</a></li>
                             <li><a href="#">Kendaraan</a></li>
                             <li class='@(ViewBag.Title == "Jenis Kendaraan" ? "active" : "")'>
@@ -72,7 +74,9 @@
                             </li>
                             <li><a href="#">Sinkronisasi Kendaraan</a></li>
                             <li><a href="#">Opr/Koordinator TPS</a></li>
-                            <li><a href="#">Jenis TPS</a></li>
+                            <li class='@(ViewBag.Title == "Jenis TPS" ? "active" : "")'>
+                                <a asp-controller="JenisTps" asp-action="Index">Jenis TPS</a>
+                            </li>
                             <li><a href="#">Lokasi TPS</a></li>
                             <li><a href="#">Bengkel</a></li>
                             <li><a href="#">Timbulan Sampah</a></li>
@@ -184,8 +188,12 @@
                     <li>
                         <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Data Referensi">Data Referensi</span></a>
                         <ul class="menu-content">
-                            <li><a href="#">Jenis Pencemaran</a></li>
-                            <li><a href="#">Nilai Pencemaran Udara</a></li>
+                            <li class='@(ViewBag.Title == "Jenis Pencemaran" ? "active" : "")'>
+                                <a asp-controller="JenisPencemaran" asp-action="Index">Jenis Pencemaran</a>
+                            </li>
+                            <li class='@(ViewBag.Title == "Nilai Pencemaran Udara" ? "active" : "")'>
+                                <a asp-controller="NilaiPencemaran" asp-action="Index">Nilai Pencemaran Udara</a>
+                            </li>
                             <li><a href="#">Sungai</a></li>
                             <li><a href="#">Periode Air Tanah</a></li>
                             <li><a href="#">Periode Air Situ Waduk</a></li>

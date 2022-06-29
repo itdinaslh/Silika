@@ -8,6 +8,9 @@ public class MerkKendaraan {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int MerkID { get; set; }
 
+    [MaxLength(20)]
+    public string? KodeMerk { get; set; }
+
     #nullable disable
     [Required(ErrorMessage = "Nama Merk Wajib Diisi")]
     [MaxLength(50, ErrorMessage = "Max 50 Karakter")]

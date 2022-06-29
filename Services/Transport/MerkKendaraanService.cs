@@ -19,6 +19,7 @@ public class MerkKendaraanService : IMerkKendaraan {
         } else {
             MerkKendaraan m = await context.MerkKendaraans.FirstOrDefaultAsync(m => m.MerkID == merk.MerkID);
             m.NamaMerk = merk.NamaMerk;
+            m.KodeMerk = merk.KodeMerk;
             m.UpdatedAt = DateTime.Now;
 
             context.Update(m);
