@@ -10,7 +10,7 @@ namespace Silika.Controllers;
 
 [Authorize(Roles = "SysAdmin, SilikaAdmin")]
 public class JenisKendaraanController : Controller {
-    private IJenisKendaraanRepo repo;
+    private readonly IJenisKendaraanRepo repo;
 
     public JenisKendaraanController(IJenisKendaraanRepo jenisRepo) {
         repo = jenisRepo;
