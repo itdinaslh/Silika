@@ -19,6 +19,12 @@ public class Bidang {
 
     public DateTime? CreatedAt { get; set; } = DateTime.Now;
 
-    public DateTime? UpdatedAt { get; set; } = DateTime.Now;    
-    
+    public DateTime? UpdatedAt { get; set; } = DateTime.Now;
+
+    public List<Kendaraan>? KendaraanAsal { get; set; }
+
+    public List<Kendaraan>? KendaraanPenugasan { get; set; }
+
+    public List<Pegawai>? Pegawais { get; set; }
+
 }

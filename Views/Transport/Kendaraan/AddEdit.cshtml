@@ -1,0 +1,61 @@
+﻿
+<div class="modal-header bg-transparent">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body pb-5 px-sm-5 pt-50">
+    <div class="text-center mb-2">
+        <h1 class="mb-1">Tambah Kendaraan</h1>            
+    </div>
+    <form action="/transport/kendaraan/store" class="row gy-1 pt-75">
+        <div class="col-12 col-md-6">
+            <label class="form-label" for="NoPol">No Polisi</label>
+            <input type="text" id="NoPol" class="form-control" data-msg="No Polisi harap diisi" />
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label" for="NoDoor">No Pintu</label>
+            <input type="text" id="NoDoor" class="form-control" data-msg="No Pintu harap diisi" />
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label" for="MyMerk">Merk/Pabrikan</label>
+            <select id="MyMerk" class="form-control"></select>
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label" for="MyTipe">Tipe Kendaraan</label>
+            <select id="MyTipe" class="form-control"></select>
+        </div>
+        <div class="col-12">
+            <label class="form-label" for="MyJenis">Jenis Kendaraan</label>
+            <select id="MyJenis" class="form-control"></select>
+        </div>
+        <div class="col-12">
+            <label class="form-label" for="MyBidang">Bidang</label>
+            <select id="MyBidang" class="form-control"></select>
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label" for="KotaAsal">Kota/Wilayah</label>
+            <select id="KotaAsal" class="form-control"></select>
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label" for="KecamatanAsal">Kecamatan</label>
+            <select id="KecamatanAsal" class="form-control"></select>
+        </div>
+        <div class="col-12">
+            <input id="chkSame" class="form-check-input" type="checkbox" checked="checked" />
+            <label class="form-check-label" for="chkSame">Wilayah penugasan sama dengan wilayah asal</label>
+        </div>
+        <div id="tugas" style="display:none;">
+            <div class="col-12">
+                <label class="form-label" for="MyBidangTugas">Bidang Penugasa</label>
+                <select id="MyBidangTugas" class="form-control"></select>
+            </div>
+            <div class="col-12 col-md-6">
+                <label class="form-label" for="KotaTugas">Kota/Wilayah Penugasan</label>
+                <select id="KotaTugas" class="form-control"></select>
+            </div>
+            <div class="col-12 col-md-6">
+                <label class="form-label" for="KecamatanTugas">Kecamatan Penugasan</label>
+                <select id="KecamatanTugas" class="form-control"></select>
+            </div>
+        </div>        
+    </form>
+</div>

@@ -26,4 +26,8 @@ public class Kelurahan {
     public string KecamatanID { get; set; }
 
     public Kecamatan Kecamatan { get; set; }
+
+#nullable enable
+
+    public List<Pegawai>? Pegawais { get; set; }
 }

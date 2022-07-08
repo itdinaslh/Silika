@@ -1,7 +1,7 @@
 @model MerkKendaraan
 
 <div class="modal-header">
-    @if (Model.MerkID == 0)
+    @if (Model.MerkKendaraanId == 0)
     {
         <h4 class="modal-title">Tambah Merk Kendaraan</h4>
     }
@@ -14,7 +14,7 @@
 </div>
 <div class="modal-body mx-50 pb-3">
     <form action="/transport/merk-kendaraan/save" class="row gy-1 gx-2 mt-75" method="post">
-        <input type="hidden" asp-for="MerkID" />
+        <input type="hidden" asp-for="MerkKendaraanId" />
         <div class="col-12">
             <label class="form-label">Kode Merk</label>
             <input type="text" asp-for="KodeMerk" class="form-control" autocomplete="off" autofocus />

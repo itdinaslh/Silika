@@ -50,4 +50,18 @@ public class JenisKendaraanApiController : Controller {
         
         return Ok(jsonData);
     }
+
+    [HttpGet("/api/transport/jenis/search")]
+    public async Task<IActionResult> SearchMerk(string? term)
+    {
+        var data = await repo.JenisKendaraans
+            .Where(k => !String.IsNullOrEmpty(term) ?
+                k.NamaJenis.ToLower().Contains(term.ToLower()) : true
+            ).Select(s => new {
+                id = s.JenisID,
+                namaJenis = s.NamaJenis
+            }).Take(10).ToListAsync();
+
+        return Ok(data);
+    }
 }

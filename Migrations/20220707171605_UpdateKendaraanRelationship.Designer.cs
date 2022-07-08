@@ -12,8 +12,8 @@ using Silika.Data;
 namespace Silika.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220629091207_UpdateMerkKerdaraan")]
-    partial class UpdateMerkKerdaraan
+    [Migration("20220707171605_UpdateKendaraanRelationship")]
+    partial class UpdateKendaraanRelationship
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -62,7 +62,6 @@ namespace Silika.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("KodeJenis")
-                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("character varying(20)");
 
@@ -242,13 +241,98 @@ namespace Silika.Migrations
                     b.ToTable("Kelurahan");
                 });
 
-            modelBuilder.Entity("Silika.Entity.MerkKendaraan", b =>
+            modelBuilder.Entity("Silika.Entity.Kendaraan", b =>
                 {
-                    b.Property<int>("MerkID")
+                    b.Property<int>("KendaraanId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("MerkID"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("KendaraanId"));
+
+                    b.Property<Guid?>("BidangAsalId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid?>("BidangPenugasanId")
+                        .HasColumnType("uuid");
+
+                    b.Property<short?>("Fungsi")
+                        .HasColumnType("smallint");
+
+                    b.Property<int?>("JenisKendaraanId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("KabupatenAsalId")
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)");
+
+                    b.Property<string>("KabupatenPenugasanId")
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)");
+
+                    b.Property<string>("KecamatanAsalId")
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)");
+
+                    b.Property<string>("KecamatanPenugasanId")
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)");
+
+                    b.Property<double?>("KonsumsiBBM")
+                        .HasColumnType("double precision");
+
+                    b.Property<int?>("MerkKendaraanId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("NoPintu")
+                        .HasMaxLength(25)
+                        .HasColumnType("character varying(25)");
+
+                    b.Property<string>("NoPolisi")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("character varying(25)");
+
+                    b.Property<string>("NoRangka")
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.Property<string>("TahunPengadaan")
+                        .HasMaxLength(5)
+                        .HasColumnType("character varying(5)");
+
+                    b.Property<int?>("TipeKendaraanId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("KendaraanId");
+
+                    b.HasIndex("BidangAsalId");
+
+                    b.HasIndex("BidangPenugasanId");
+
+                    b.HasIndex("JenisKendaraanId");
+
+                    b.HasIndex("KabupatenAsalId");
+
+                    b.HasIndex("KabupatenPenugasanId");
+
+                    b.HasIndex("KecamatanAsalId");
+
+                    b.HasIndex("KecamatanPenugasanId");
+
+                    b.HasIndex("MerkKendaraanId");
+
+                    b.HasIndex("TipeKendaraanId");
+
+                    b.ToTable("Kendaraan");
+                });
+
+            modelBuilder.Entity("Silika.Entity.MerkKendaraan", b =>
+                {
+                    b.Property<int>("MerkKendaraanId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("MerkKendaraanId"));
 
                     b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -268,7 +352,7 @@ namespace Silika.Migrations
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.HasKey("MerkID");
+                    b.HasKey("MerkKendaraanId");
 
                     b.ToTable("MerkKendaraan");
                 });
@@ -339,6 +423,35 @@ namespace Silika.Migrations
                     b.ToTable("Provinsi");
                 });
 
+            modelBuilder.Entity("Silika.Entity.TipeKendaraan", b =>
+                {
+                    b.Property<int>("TipeKendaraanId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("TipeKendaraanId"));
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int?>("MerkKendaraanId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("NamaTipe")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("TipeKendaraanId");
+
+                    b.HasIndex("MerkKendaraanId");
+
+                    b.ToTable("TipeKendaraan");
+                });
+
             modelBuilder.Entity("Silika.Entity.Kabupaten", b =>
                 {
                     b.HasOne("Silika.Entity.Provinsi", "Provinsi")
@@ -366,19 +479,123 @@ namespace Silika.Migrations
                     b.Navigation("Kecamatan");
                 });
 
+            modelBuilder.Entity("Silika.Entity.Kendaraan", b =>
+                {
+                    b.HasOne("Silika.Entity.Bidang", "BidangAsal")
+                        .WithMany("KendaraanAsal")
+                        .HasForeignKey("BidangAsalId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Silika.Entity.Bidang", "BidangPenugasan")
+                        .WithMany("KendaraanPenugasan")
+                        .HasForeignKey("BidangPenugasanId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Silika.Entity.JenisKendaraan", "JenisKendaraan")
+                        .WithMany("Kendaraans")
+                        .HasForeignKey("JenisKendaraanId");
+
+                    b.HasOne("Silika.Entity.Kabupaten", "KabupatenAsal")
+                        .WithMany("KendaraanAsal")
+                        .HasForeignKey("KabupatenAsalId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Silika.Entity.Kabupaten", "KabupatenPenugasan")
+                        .WithMany("KendaraanPenugasan")
+                        .HasForeignKey("KabupatenPenugasanId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Silika.Entity.Kecamatan", "KecamatanAsal")
+                        .WithMany("KendaraanAsal")
+                        .HasForeignKey("KecamatanAsalId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Silika.Entity.Kecamatan", "KecamatanPenugasan")
+                        .WithMany("KendaraanPenugasan")
+                        .HasForeignKey("KecamatanPenugasanId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Silika.Entity.MerkKendaraan", "MerkKendaraan")
+                        .WithMany("Kendaraans")
+                        .HasForeignKey("MerkKendaraanId");
+
+                    b.HasOne("Silika.Entity.TipeKendaraan", "TipeKendaraan")
+                        .WithMany("Kendaraans")
+                        .HasForeignKey("TipeKendaraanId");
+
+                    b.Navigation("BidangAsal");
+
+                    b.Navigation("BidangPenugasan");
+
+                    b.Navigation("JenisKendaraan");
+
+                    b.Navigation("KabupatenAsal");
+
+                    b.Navigation("KabupatenPenugasan");
+
+                    b.Navigation("KecamatanAsal");
+
+                    b.Navigation("KecamatanPenugasan");
+
+                    b.Navigation("MerkKendaraan");
+
+                    b.Navigation("TipeKendaraan");
+                });
+
+            modelBuilder.Entity("Silika.Entity.TipeKendaraan", b =>
+                {
+                    b.HasOne("Silika.Entity.MerkKendaraan", "MerkKendaraan")
+                        .WithMany("TipeKendaraans")
+                        .HasForeignKey("MerkKendaraanId");
+
+                    b.Navigation("MerkKendaraan");
+                });
+
+            modelBuilder.Entity("Silika.Entity.Bidang", b =>
+                {
+                    b.Navigation("KendaraanAsal");
+
+                    b.Navigation("KendaraanPenugasan");
+                });
+
+            modelBuilder.Entity("Silika.Entity.JenisKendaraan", b =>
+                {
+                    b.Navigation("Kendaraans");
+                });
+
             modelBuilder.Entity("Silika.Entity.Kabupaten", b =>
                 {
                     b.Navigation("Kecamatans");
+
+                    b.Navigation("KendaraanAsal");
+
+                    b.Navigation("KendaraanPenugasan");
                 });
 
             modelBuilder.Entity("Silika.Entity.Kecamatan", b =>
                 {
                     b.Navigation("Kelurahans");
+
+                    b.Navigation("KendaraanAsal");
+
+                    b.Navigation("KendaraanPenugasan");
+                });
+
+            modelBuilder.Entity("Silika.Entity.MerkKendaraan", b =>
+                {
+                    b.Navigation("Kendaraans");
+
+                    b.Navigation("TipeKendaraans");
                 });
 
             modelBuilder.Entity("Silika.Entity.Provinsi", b =>
                 {
                     b.Navigation("Kabupatens");
+                });
+
+            modelBuilder.Entity("Silika.Entity.TipeKendaraan", b =>
+                {
+                    b.Navigation("Kendaraans");
                 });
 #pragma warning restore 612, 618
         }

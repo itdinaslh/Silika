@@ -1,4 +1,4 @@
-$(document).ready(function () {
+﻿$(document).ready(function () {
     loadTable();
 });
 
@@ -9,39 +9,38 @@ function loadContent() {
 function loadTable() {
     $('#tblData').DataTable().clear().destroy();
     $('#tblData').DataTable({
-        processing: true,
+        processing: false,
         serverSide: true,
-        lengthMenu: [5,10,25,50],
-        filter: true,
+        lengthMenu: [5, 10, 25, 50],
         stateSave: true,
+        filter: true,
         orderMulti: false,
         ajax: {
-            url: "/api/master/kelurahan",
+            url: "/api/transport/tipe-kendaraan",
             type: "POST",
             dataType: "json"
         },
         columns: [
-            { data: "kelurahanID", name: "kelurahanID", autoWidth: true },
-            { data: "namaKelurahan", name: "namaKelurahan", autoWidth: true },
-            { data: "namaKecamatan", name: "namaKecamatan", autoWidth: true },
-            { data: "namaKabupaten", name: "namaKabupaten", autoWidth: true },
-            { data: "namaProvinsi", name: "namaProvinsi", autoWidth: true },            
+            { data: "tipeKendaraanId", name: "tipeKendaraanId", autoWidth: true },
+            { data: "namaMerk", name: "namaMerk", autoWidth: true },
+            { data: "namaTipe", name: "namaTipe", autoWidth: true },
             {
-                data: 'kelurahanID',
-                render: function (data, type, row) { return "<button type='button' class='btn btn-sm btn-success mr-2 showMe' style='width:100%;' data-href='/master/kelurahan/edit/?kelurahanID=" + row.kelurahanID + "'> Edit</button>" }
+                data: 'tipeKendaraanId',
+                render: function (data, type, row) { return "<button type='button' class='btn btn-sm btn-success mr-2 showMe' style='width:100%;' data-href='/transport/tipe-kendaraan/edit/?id=" + row.tipeKendaraanId + "'> Edit</button>" }
             }
         ],
         order: [[0, "desc"]]
     })
 }
 
+
 $(document).on('shown.bs.modal', function () {
-    $('#sProvinsi').select2({
-        placeholder: 'Pilih Provinsi...',
+    $('#sMerk').select2({
+        placeholder: 'Pilih Merk...',
         dropdownParent: $('#myModal'),
         allowClear: true,
         ajax: {
-            url: "/api/master/provinsi/search",
+            url: "/api/transport/merk/search",
             contentType: "application/json; charset=utf-8",
             data: function (params) {
                 var query = {
@@ -53,7 +52,7 @@ $(document).on('shown.bs.modal', function () {
                 return {
                     results: $.map(result, function (item) {
                         return {
-                            text: item.namaProvinsi,
+                            text: item.namaMerk,
                             id: item.id
                         }
                     })

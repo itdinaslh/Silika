@@ -24,7 +24,7 @@ public class MerkController : Controller {
 
     [HttpGet("/transport/merk-kendaraan/edit")]
     public async Task<IActionResult> Edit(int merkId) => PartialView("~/Views/Transport/Merk/AddEdit.cshtml",
-        await repo.MerkKendaraans.FirstOrDefaultAsync(m => m.MerkID == merkId)
+        await repo.MerkKendaraans.FirstOrDefaultAsync(m => m.MerkKendaraanId == merkId)
     );
 
     [HttpPost("/transport/merk-kendaraan/save")]

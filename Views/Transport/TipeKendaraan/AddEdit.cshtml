@@ -1,0 +1,31 @@
+﻿@model TipeKendaraanVM
+
+<div class="modal-header">
+    @if (Model.TipeKendaraan.TipeKendaraanId == 0)
+    {
+        <h4 class="modal-title">Tambah Tipe Kendaraan</h4>
+    }
+    else
+    {
+        <h4 class="modal-title">Edit Tipe Kendaraan</h4>
+    }
+
+    <button type="button" class="btn-close" data-bs-dismiss="modal">&times;</button>
+</div>
+<div class="modal-body mx-50 pb-3">
+    <form action="/transport/tipe-kendaraan/save" class="row gy-1 gx-2 mt-75" method="post">
+        <input type="hidden" asp-for="TipeKendaraan.TipeKendaraanId" />
+        <div class="col-12">
+            <label class="form-label">Nama Tipe</label>
+            <input type="text" asp-for="TipeKendaraan.NamaTipe" class="form-control" autocomplete="off" autofocus />
+        </div>
+        <div class="col-12">
+            <label class="form-label">Merk Kendaraan</label>
+            <select id="sMerk" class="form-control" asp-for="TipeKendaraan.MerkKendaraanId"></select>
+        </div>
+        <div class="col-12 text-end mt-2">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
+            <button type="submit" class="btn btn-success">Simpan</button>
+        </div>
+    </form>    
+</div> 

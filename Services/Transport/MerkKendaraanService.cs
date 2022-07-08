@@ -14,10 +14,10 @@ public class MerkKendaraanService : IMerkKendaraan {
 
     #nullable disable
     public async Task SaveDataAsync(MerkKendaraan merk) {
-        if (merk.MerkID == 0) {
+        if (merk.MerkKendaraanId == 0) {
             await context.AddAsync(merk);
         } else {
-            MerkKendaraan m = await context.MerkKendaraans.FirstOrDefaultAsync(m => m.MerkID == merk.MerkID);
+            MerkKendaraan m = await context.MerkKendaraans.FirstOrDefaultAsync(m => m.MerkKendaraanId == merk.MerkKendaraanId);
             m.NamaMerk = merk.NamaMerk;
             m.KodeMerk = merk.KodeMerk;
             m.UpdatedAt = DateTime.Now;

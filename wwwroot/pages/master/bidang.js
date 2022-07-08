@@ -25,7 +25,7 @@ function loadTable() {
             { data: "kepalaBidang", name: "kepalaBidang", autoWidth: true },
             {
                 data: 'bidangID',
-                render: function (data, type, row) { return "<button type='button' class='btn btn-sm btn-outline-success mr-2 showMe' style='width:100%;' data-href='/master/bidang/edit/?bidangId=" + row.bidangID + "'> Edit</button>" }
+                render: function (data, type, row) { return "<button type='button' class='btn btn-sm btn-success mr-2 showMe' style='width:100%;' data-href='/master/bidang/edit/?bidangId=" + row.bidangID + "'> Edit</button>" }
             }
         ],
         order: [[0, "desc"]]

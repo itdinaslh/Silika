@@ -31,4 +31,12 @@ public class Kabupaten {
     public Provinsi Provinsi { get; set; }
 
     public List<Kecamatan> Kecamatans { get; set; }
+
+#nullable enable
+    public List<Kendaraan>? KendaraanAsal { get; set; }
+
+    public List<Kendaraan>? KendaraanPenugasan { get; set; }
+
+    public List<Pegawai>? Pegawais { get; set; }
+
 }

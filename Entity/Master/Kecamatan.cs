@@ -30,4 +30,11 @@ public class Kecamatan {
     public Kabupaten Kabupaten { get; set; }
 
     public List<Kelurahan> Kelurahans { get; set; }
+
+#nullable enable
+    public List<Kendaraan>? KendaraanAsal { get; set; }
+
+    public List<Kendaraan>? KendaraanPenugasan { get; set; }
+
+    public List<Pegawai>? Pegawais { get; set; }
 }

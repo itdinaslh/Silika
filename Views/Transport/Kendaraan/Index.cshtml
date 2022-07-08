@@ -1,6 +1,6 @@
-@{
+﻿@{
     Layout = "_Layout";
-    ViewData["title"] = "Bidang UPT/Dinas";
+    ViewData["title"] = "Kendaraan";
 }
 
 @section vendorcss {
@@ -8,61 +8,36 @@
     <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/responsive.bootstrap5.min.css">
     <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/buttons.bootstrap5.min.css">
-    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/rowGroup.bootstrap5.min.css">    
-    <link rel="stylesheet" href="~/lib/sweetalert/sweetalert2.min.css" />    
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/rowGroup.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/select2/css/select2.min.css" />
+    <link rel="stylesheet" href="~/lib/sweetalert/sweetalert2.min.css" />
 }
 
 <!--Modal Window-->
 <div id='myModal' class='modal fade' data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div id='myModalContent'></div>
         </div>
     </div>
 </div>
 
-<div class="content-header row">
-    <div class="content-header-left col-md-9 col-12 mb-2">
-        <div class="row breadcrumbs-top">
-            <div class="col-12">
-                <h2 class="content-header-title float-start mb-0">Kelola Sampah</h2>
-                <div class="breadcrumb-wrapper">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                        <li class="breadcrumb-item"><a href="#">Kelola Sampah</a></li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="content-header-right text-md-end col-md-3 col-12 d-md-block d-none">
-        <div class="mb-1 breadcrumb-right">
-            <div class="dropdown">
-                <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="grid"></i></button>
-                <div class="dropdown-menu dropdown-menu-end">
-                    <a class="dropdown-item" href="/dashboard"><i class="me-1" data-feather="check-square"></i><span class="align-middle">Kelola Sampah</span></a>                    
-                </div>
-            </div>
-        </div>
-    </div>    
-</div>
-
 <div class="page-content">
-    <div class="container-fluid">
+    <div class="container-fluid">        
         <!-- start page title -->
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center
                     justify-content-between">
-                    <h4 class="mb-sm-0 font-size-18">Master Data</h4>
+                    <h4 class="mb-sm-0 font-size-18">Kendaraan</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript:
-                                    void(0);">Administrator</a></li>
+                                    void(0);">Transportasi Sampah</a></li>
                             <li class="breadcrumb-item"><a href="javascript:
                                     void(0);">Data Referensi</a></li>        
-                            <li class="breadcrumb-item active">Bidang/UPT/Dinas</li>
+                            <li class="breadcrumb-item active">Kendaraan</li>
                         </ol>
                     </div>
 
@@ -73,17 +48,28 @@
 
         <div class="row">
             <div class="col-12">
-                <button class="btn btn-primary showMe" style="margin-bottom:20px;" data-href="/master/bidang/create">Tambah Bidang</button>                
+                <button class="btn btn-primary showMe" style="margin-bottom:20px; margin-top:20px;" data-href="/transport/kendaraan/create">Tambah Kendaraan</button>
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Data Bidang</h4>
+                        <h4 class="card-title">Kendaraan</h4>
+                        <div class="dropdown chart-dropdown">
+                            <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-bs-toggle="dropdown"></i>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <button class="dropdown-item showMe" data-href="/transport/kendaraan/create">Tambah Kendaraan</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
                         <table id="tblData" class="table table-bordered dt-responsive nowrap w-100">
                             <thead>
                                 <tr>
-                                    <th>Nama Bidang</th>
-                                    <th>Nama Pimpinan</th>
+                                    <th>No</th>
+                                    <th>No Polisi</th>
+                                    <th>Jenis</th>
+                                    <th>Tahun Pengadaan</th>
+                                    <th>Bidang Penugasan</th>
+                                    <th>Kota Penugasan</th>
+                                    <th>Kecamatan Penugasan</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -97,6 +83,7 @@
 
 @section vendorjs {
     <script src="~/lib/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="~/lib/select2/js/select2.full.min.js"></script>
     <!-- Required datatable js -->
     <script src="~/app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js"></script>
     <script src="~/app-assets/vendors/js/tables/datatable/dataTables.bootstrap5.min.js"></script>
@@ -104,7 +91,7 @@
     <script src="~/app-assets/vendors/js/tables/datatable/responsive.bootstrap5.min.js"></script>    
 }
 
-@section scripts {   
-    <script src="~/pages/master/bidang.js"></script>
-    <script src="~/js/modalForm.js"></script>
+@section scripts {       
+    <script src="~/pages/transport/kendaraan.js"></script>
+    <script src="~/js/modalForm.js"></script>    
 }

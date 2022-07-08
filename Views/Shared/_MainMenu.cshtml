@@ -67,8 +67,12 @@
                             <li class='@(ViewBag.Title == "Merk Kendaraan" ? "active" : "")'>
                                 <a asp-controller="Merk" asp-action="Index">Merk Kendaraan</a>
                             </li>
-                            <li><a href="#">Tipe Kendaraan</a></li>
-                            <li><a href="#">Kendaraan</a></li>
+                            <li class='@(ViewBag.Title == "Tipe Kendaraan" ? "active" : "")'>
+                                <a asp-controller="TipeKendaraan" asp-action="Index">Tipe Kendaraan</a>
+                            </li>
+                            <li class='@(ViewBag.Title == "Kendaraan" ? "active" : "")'>
+                                <a asp-controller="Kendaraan" asp-action="Index">Kendaraan</a>
+                            </li>
                             <li class='@(ViewBag.Title == "Jenis Kendaraan" ? "active" : "")'>
                                 <a asp-controller="JenisKendaraan" asp-action="Index">Jenis Kendaraan</a>
                             </li>

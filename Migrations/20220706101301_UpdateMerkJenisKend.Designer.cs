@@ -12,8 +12,8 @@ using Silika.Data;
 namespace Silika.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220629073343_UpdateJenisKendaraan")]
-    partial class UpdateJenisKendaraan
+    [Migration("20220706101301_UpdateMerkJenisKend")]
+    partial class UpdateMerkJenisKend
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -62,7 +62,6 @@ namespace Silika.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("KodeJenis")
-                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("character varying(20)");
 
@@ -255,6 +254,10 @@ namespace Silika.Migrations
 
                     b.Property<bool?>("IsActive")
                         .HasColumnType("boolean");
+
+                    b.Property<string>("KodeMerk")
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
 
                     b.Property<string>("NamaMerk")
                         .IsRequired()

@@ -12,12 +12,12 @@ public class JenisKendaraanService : IJenisKendaraanRepo {
 
     public IQueryable<JenisKendaraan> JenisKendaraans => context.JenisKendaraans;
 
-    #nullable disable
+    
     public async Task SaveDataAsync(JenisKendaraan jenis) {
         if (jenis.JenisID == 0) {
             await context.AddAsync(jenis);
         } else {
-            JenisKendaraan jns = await context.JenisKendaraans.FirstOrDefaultAsync(j => j.JenisID == jenis.JenisID);
+            JenisKendaraan? jns = await context.JenisKendaraans.FirstOrDefaultAsync(j => j.JenisID == jenis.JenisID);
             jns.KodeJenis = jenis.KodeJenis;
             jns.NamaJenis = jenis.NamaJenis;
             jns.UpdatedAt = DateTime.Now;

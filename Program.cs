@@ -29,10 +29,13 @@ services.AddDbContext<AppDbContext>(options => {
     services.AddScoped<IJenisPencemaranRepo, JenisPencemaranService>();
     services.AddScoped<INilaiPencemaranRepo, NilaiPencemaranService>();
     services.AddScoped<IMerkKendaraan, MerkKendaraanService>();
+    services.AddScoped<ITipeKendaraan, TipeKendaraanService>();
     services.AddScoped<IKabupatenRepo, KabupatenService>();
     services.AddScoped<IKecamatanRepo, KecamatanService>();
     services.AddScoped<IKelurahanRepo, KelurahanService>();
     services.AddScoped<IBidangRepo, BidangService>();
+    services.AddScoped<IKendaraan, KendaraanService>();
+    services.AddScoped<IPegawai, PegawaiService>();
 }
 
 services.AddAuthentication(options => {

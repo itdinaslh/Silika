@@ -10,7 +10,7 @@ namespace Silika.Controllers.api;
 [ApiController]
 [Route("[controller]")]
 public class MerkKendaraanApiController : Controller {
-    private IMerkKendaraan repo;
+    private readonly IMerkKendaraan repo;
 
     public MerkKendaraanApiController(IMerkKendaraan mRepo) {
         repo = mRepo;
@@ -29,7 +29,7 @@ public class MerkKendaraanApiController : Controller {
         int recordsTotal = 0;
 
         var init = repo.MerkKendaraans.Select(x => new {
-            merkID = x.MerkID,
+            merkKendaraanId = x.MerkKendaraanId,
             kodeMerk = x.KodeMerk,
             namaMerk = x.NamaMerk
         });
@@ -49,5 +49,19 @@ public class MerkKendaraanApiController : Controller {
         var jsonData = new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = result};
         
         return Ok(jsonData);
+    }
+
+    [HttpGet("/api/transport/merk/search")]
+    public async Task<IActionResult> SearchMerk(string? term)
+    {
+        var data = await repo.MerkKendaraans
+            .Where(k => !String.IsNullOrEmpty(term) ?
+                k.NamaMerk.ToLower().Contains(term.ToLower()) : true
+            ).Select(s => new {
+                id = s.MerkKendaraanId,
+                namaMerk = s.NamaMerk
+            }).Take(10).ToListAsync();
+
+        return Ok(data);
     }
 }

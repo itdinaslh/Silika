@@ -6,7 +6,7 @@ namespace Silika.Entity;
 [Table("MerkKendaraan")]
 public class MerkKendaraan {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int MerkID { get; set; }
+    public int MerkKendaraanId { get; set; }
 
     [MaxLength(20)]
     public string? KodeMerk { get; set; }
@@ -21,5 +21,10 @@ public class MerkKendaraan {
     public DateTime? CreatedAt { get; set; } = DateTime.Now;
 
     public DateTime? UpdatedAt { get; set; } = DateTime.Now;
+
+    public List<TipeKendaraan> TipeKendaraans { get; set; }
+
+#nullable enable
+    public List<Kendaraan>? Kendaraans { get; set; }
 
 }
