@@ -38,6 +38,13 @@ function loadTable() {
 }
 
 $(document).on('shown.bs.modal', function () {
+    $('#chkSame').change(function () {
+        if (!this.checked) {
+            $('.tugas').show();
+        } else {
+            $('.tugas').hide();
+        }
+    })
     // Merk API search
     $('#MyMerk').select2({
         placeholder: 'Pilih Merk...',
@@ -113,6 +120,62 @@ $(document).on('shown.bs.modal', function () {
                     results: $.map(result, function (item) {
                         return {
                             text: item.namaJenis,
+                            id: item.id
+                        }
+                    })
+                }
+            },
+            cache: true
+        }
+    });
+
+    // Bidang asal api search
+    $('#MyBidang').select2({
+        placeholder: 'Pilih Jenis...',
+        dropdownParent: $('#myModal'),
+        allowClear: true,
+        ajax: {
+            url: "/api/master/bidang/search",
+            contentType: "application/json; charset=utf-8",
+            data: function (params) {
+                var query = {
+                    term: params.term,
+                };
+                return query;
+            },
+            processResults: function (result) {
+                return {
+                    results: $.map(result, function (item) {
+                        return {
+                            text: item.namaBidang,
+                            id: item.id
+                        }
+                    })
+                }
+            },
+            cache: true
+        }
+    });
+
+    // Kabupaten asal api search
+    $('#KotaAsal').select2({
+        placeholder: 'Pilih Kota/Kabupaten...',
+        dropdownParent: $('#myModal'),
+        allowClear: true,
+        ajax: {
+            url: "/api/master/kabupaten/search",
+            contentType: "application/json; charset=utf-8",
+            data: function (params) {
+                var query = {
+                    term: params.term,
+                };
+                return query;
+            },
+            processResults: function (result) {
+                return {
+                    results: $.map(result, function (item) {
+                        return {
+                            text: item.namaKabupaten,
                             id: item.id
                         }
                     })

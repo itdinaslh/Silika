@@ -54,28 +54,18 @@ public class KabupatenApiController : Controller {
         return Ok(jsonData);
     }
 
-    [HttpGet("/api/master/kabupaten/search")]    
-    public async Task<IActionResult> SearchKabupaten(string term) {                      
-        if (String.IsNullOrEmpty(term))
-        {
-            var provinceData = await repo.Kabupatens.
-            Select(s => new
-            {
+    [HttpGet("/api/master/kabupaten/search")]
+    public async Task<IActionResult> SearchKabupaten(string? term)
+    {
+        var data = await repo.Kabupatens
+            .Where(a => a.ProvinsiID == "31")
+            .Where(k => !String.IsNullOrEmpty(term) ?
+                k.NamaKabupaten.ToLower().Contains(term.ToLower()) : true
+            ).Select(s => new {
                 id = s.KabupatenID,
                 namaKabupaten = s.NamaKabupaten
-            }).Take(5).ToListAsync();
-            var data = provinceData;
-            return Ok(data);
-        } else
-        {            
-            var prov = await repo.Kabupatens.Where(p => p.NamaKabupaten.ToLower().Contains(term.ToLower()))
-                .Select(s => new {
-                    id = s.KabupatenID,
-                    namaKabupaten = s.NamaKabupaten
-                }).Take(5).ToListAsync();
+            }).Take(10).ToListAsync();
 
-            var data = prov;
-            return Ok(data);
-        }
+        return Ok(data);
     }
 }

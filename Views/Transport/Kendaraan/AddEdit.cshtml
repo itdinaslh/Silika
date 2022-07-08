@@ -43,19 +43,21 @@
             <input id="chkSame" class="form-check-input" type="checkbox" checked="checked" />
             <label class="form-check-label" for="chkSame">Wilayah penugasan sama dengan wilayah asal</label>
         </div>
-        <div id="tugas" style="display:none;">
-            <div class="col-12">
-                <label class="form-label" for="MyBidangTugas">Bidang Penugasa</label>
-                <select id="MyBidangTugas" class="form-control"></select>
-            </div>
-            <div class="col-12 col-md-6">
-                <label class="form-label" for="KotaTugas">Kota/Wilayah Penugasan</label>
-                <select id="KotaTugas" class="form-control"></select>
-            </div>
-            <div class="col-12 col-md-6">
-                <label class="form-label" for="KecamatanTugas">Kecamatan Penugasan</label>
-                <select id="KecamatanTugas" class="form-control"></select>
-            </div>
-        </div>        
+        <div class="col-12 tugas" style="display:none;">
+            <label class="form-label" for="MyBidangTugas">Bidang Penugasa</label>
+            <select id="MyBidangTugas" class="form-control"></select>
+        </div>
+        <div class="col-12 col-md-6 tugas" style="display:none;">
+            <label class="form-label" for="KotaTugas">Kota/Wilayah Penugasan</label>
+            <select id="KotaTugas" class="form-control"></select>
+        </div>
+        <div class="col-12 col-md-6 tugas" style="display:none;">
+            <label class="form-label" for="KecamatanTugas">Kecamatan Penugasan</label>
+            <select id="KecamatanTugas" class="form-control"></select>
+        </div>
+        <div class="col-12 text-center mt-2 pt-50">
+            <button type="submit" class="btn btn-success me-1">Submit</button>
+            <button type="reset" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Tutup</button>
+        </div>
     </form>
 </div>

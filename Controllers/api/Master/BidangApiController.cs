@@ -90,4 +90,18 @@ public class BidangApiController : Controller {
 
         return Json(data);
     }
+
+    [HttpGet("/api/master/bidang/search")]
+    public async Task<IActionResult> SearchBidang(string? term)
+    {
+        var data = await _repo.Bidangs
+            .Where(k => !String.IsNullOrEmpty(term) ?
+                k.NamaBidang.ToLower().Contains(term.ToLower()) : true
+            ).Select(s => new {
+                id = s.BidangID,
+                namaBidang = s.NamaBidang
+            }).Take(10).ToListAsync();
+
+        return Ok(data);
+    }
 }
