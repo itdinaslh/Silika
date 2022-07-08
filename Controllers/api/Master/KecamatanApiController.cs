@@ -16,7 +16,7 @@ public class KecamatanApiController : Controller {
         repo = kecamatanRepo;
     }
 
-    #nullable disable
+    
     [HttpPost("/api/master/kecamatan")]
     public async Task<IActionResult> KecamatanTable() {
         var draw = Request.Form["draw"].FirstOrDefault();
@@ -55,5 +55,20 @@ public class KecamatanApiController : Controller {
         var jsonData = new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = result};
         
         return Ok(jsonData);
-    }   
+    }
+
+    [HttpGet("/api/master/kecamatan/search")]
+    public async Task<IActionResult> SearchKecamatan(string kab, string? term)
+    {
+        var data = await repo.Kecamatans
+            .Where(a => a.KabupatenID == kab)
+            .Where(k => !String.IsNullOrEmpty(term) ?
+                k.NamaKecamatan.ToLower().Contains(term.ToLower()) : true
+            ).Select(s => new {
+                id = s.KecamatanID,
+                namaKecamatan = s.NamaKecamatan
+            }).Take(10).ToListAsync();
+
+        return Ok(data);
+    }
 }

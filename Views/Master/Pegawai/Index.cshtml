@@ -1,6 +1,6 @@
 ﻿@{
     Layout = "_Layout";
-    ViewData["title"] = "Kendaraan";
+    ViewBag.Title = "Master Pegawai";
 }
 
 @section vendorcss {
@@ -9,17 +9,12 @@
     <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/responsive.bootstrap5.min.css">
     <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/buttons.bootstrap5.min.css">
     <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/rowGroup.bootstrap5.min.css">
-    <link rel="stylesheet" type="text/css" href="~/lib/select2/css/select2.min.css" />
     <link rel="stylesheet" href="~/lib/sweetalert/sweetalert2.min.css" />
 }
 
-@*@section styles {
-    <link rel="stylesheet" type="text/css" href="~/css/custom.css" />
-}
-*@
 <!--Modal Window-->
 <div id='myModal' class='modal fade' data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div id='myModalContent'></div>
         </div>
@@ -33,15 +28,15 @@
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center
                     justify-content-between">
-                    <h4 class="mb-sm-0 font-size-18">Kendaraan</h4>
+                    <h4 class="mb-sm-0 font-size-18">Pegawai</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript:
-                                    void(0);">Transportasi Sampah</a></li>
+                                    void(0);">Administrator</a></li>
                             <li class="breadcrumb-item"><a href="javascript:
                                     void(0);">Data Referensi</a></li>        
-                            <li class="breadcrumb-item active">Kendaraan</li>
+                            <li class="breadcrumb-item active">Pegawai</li>
                         </ol>
                     </div>
 
@@ -52,28 +47,29 @@
 
         <div class="row">
             <div class="col-12">
-                <button class="btn btn-primary showMe" style="margin-bottom:20px; margin-top:20px;" data-href="/transport/kendaraan/create">Tambah Kendaraan</button>
+                <button class="btn btn-primary showMe" style="margin-bottom:20px; margin-top:20px;" data-href="/master/pegawai/create">Tambah Pegawai</button>
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Kendaraan</h4>
+                        <h4 class="card-title">Data Pegawai</h4>
                         <div class="dropdown chart-dropdown">
                             <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-bs-toggle="dropdown"></i>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <button class="dropdown-item showMe" data-href="/transport/kendaraan/create">Tambah Kendaraan</button>
+                                <button class="dropdown-item showMe" data-href="/master/pegawai/create">Tambah Pegawai</button>
                             </div>
                         </div>
                     </div>
                     <div class="card-body">
                         <table id="tblData" class="table table-bordered dt-responsive nowrap w-100">
                             <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>No Polisi</th>
-                                    <th>Jenis</th>
-                                    <th>Tahun Pengadaan</th>
-                                    <th>Bidang Penugasan</th>
-                                    <th>Kota Penugasan</th>
-                                    <th>Kecamatan Penugasan</th>
+                                <tr>                                    
+                                    <th>Nama</th>
+                                    <th>NIK</th>
+                                    <th>No HP</th>
+                                    <th>Tipe Pegawai</th>
+                                    <th>Status</th>
+                                    <th>Bidang</th>
+                                    <th>Kota</th>
+                                    <th>Kecamatan</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -95,7 +91,3 @@
     <script src="~/app-assets/vendors/js/tables/datatable/responsive.bootstrap5.min.js"></script>    
 }
 
-@section scripts {       
-    <script src="~/pages/transport/kendaraan.js"></script>
-    <script src="~/js/modalForm.js"></script>    
-}

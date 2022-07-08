@@ -15,7 +15,6 @@ public class BidangApiController : Controller {
         _repo = bRepo;        
     }
 
-    #nullable disable
     [HttpPost("/api/master/bidang")]
     public async Task<IActionResult> BidangTable() {
         var draw = Request.Form["draw"].FirstOrDefault();
@@ -36,7 +35,7 @@ public class BidangApiController : Controller {
 
         if (!string.IsNullOrEmpty(searchValue)) {
             init = init.Where(a => a.NamaBidang.ToLower().Contains(searchValue.ToLower()) ||
-                a.KepalaBidang.ToLower().Contains(searchValue.ToLower())
+                a.KepalaBidang!.ToLower().Contains(searchValue.ToLower())
             );
         }
 

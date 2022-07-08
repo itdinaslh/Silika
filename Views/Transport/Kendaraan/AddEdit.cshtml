@@ -1,4 +1,5 @@
-﻿
+﻿@model KendaraanVM
+
 <div class="modal-header bg-transparent">
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
@@ -6,54 +7,104 @@
     <div class="text-center mb-2">
         <h1 class="mb-1">Tambah Kendaraan</h1>            
     </div>
-    <form action="/transport/kendaraan/store" class="row gy-1 pt-75">
+    <form action="/transport/kendaraan/store" method="post" class="row gy-1 pt-75">
+        <input type="hidden" asp-for="Kendaraan.KendaraanId" />
         <div class="col-12 col-md-6">
             <label class="form-label" for="NoPol">No Polisi</label>
-            <input type="text" id="NoPol" class="form-control" data-msg="No Polisi harap diisi" />
+            <input type="text" id="NoPol" asp-for="Kendaraan.NoPolisi" class="form-control" placeholder="No Polisi.." data-msg="No Polisi harap diisi" />
         </div>
         <div class="col-12 col-md-6">
             <label class="form-label" for="NoDoor">No Pintu</label>
-            <input type="text" id="NoDoor" class="form-control" data-msg="No Pintu harap diisi" />
+            <input type="text" id="NoDoor" asp-for="Kendaraan.NoPintu" class="form-control" placeholder="No Pintu..." data-msg="No Pintu harap diisi" />
         </div>
         <div class="col-12 col-md-6">
             <label class="form-label" for="MyMerk">Merk/Pabrikan</label>
-            <select id="MyMerk" class="form-control"></select>
+            <select id="MyMerk" asp-for="Kendaraan.MerkKendaraanId" class="form-control">
+                @if (Model.Kendaraan.MerkKendaraanId is not null)
+                {
+                    <option value="@Model.Kendaraan.MerkKendaraanId" selected="selected">@Model.NamaMerk</option>
+                }
+            </select>
         </div>
         <div class="col-12 col-md-6">
             <label class="form-label" for="MyTipe">Tipe Kendaraan</label>
-            <select id="MyTipe" class="form-control"></select>
+            <select id="MyTipe" asp-for="Kendaraan.TipeKendaraanId" class="form-control">
+                @if (Model.Kendaraan.TipeKendaraanId is not null)
+                {
+                    <option value="@Model.Kendaraan.TipeKendaraanId" selected="selected">@Model.NamaTipe</option>
+                }
+            </select>
         </div>
-        <div class="col-12">
+        <div class="col-12 col-md-6">
             <label class="form-label" for="MyJenis">Jenis Kendaraan</label>
-            <select id="MyJenis" class="form-control"></select>
+            <select id="MyJenis" asp-for="Kendaraan.JenisKendaraanId" class="form-control">
+                @if (Model.NamaJenis != string.Empty)
+                {
+                    <option value="@Model.Kendaraan.JenisKendaraanId" selected="selected">@Model.NamaJenis</option>
+                }
+            </select>
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label" for="Tahun">Tahun Pengadaan</label>
+            <input id="Tahun" type="number" asp-for="Kendaraan.TahunPengadaan" class="form-control" />
         </div>
         <div class="col-12">
             <label class="form-label" for="MyBidang">Bidang</label>
-            <select id="MyBidang" class="form-control"></select>
+            <select id="MyBidang" asp-for="Kendaraan.BidangAsalId" class="form-control">
+                @if (Model.BidangAsal != string.Empty)
+                {
+                    <option value="@Model.Kendaraan.BidangAsalId" selected="selected">@Model.BidangAsal</option>
+                }
+            </select>
         </div>
         <div class="col-12 col-md-6">
             <label class="form-label" for="KotaAsal">Kota/Wilayah</label>
-            <select id="KotaAsal" class="form-control"></select>
+            <select id="KotaAsal" asp-for="Kendaraan.KabupatenAsalId" class="form-control">
+                @if (Model.KabupatenAsal != string.Empty)
+                {
+                    <option value="@Model.Kendaraan.KabupatenAsalId" selected="selected">@Model.KabupatenAsal</option>
+                }
+            </select>
         </div>
         <div class="col-12 col-md-6">
             <label class="form-label" for="KecamatanAsal">Kecamatan</label>
-            <select id="KecamatanAsal" class="form-control"></select>
+            <select id="KecamatanAsal" asp-for="Kendaraan.KecamatanAsalId" class="form-control">
+                @if (Model.KecamatanAsal != string.Empty)
+                {
+                    <option value="@Model.Kendaraan.KecamatanAsalId" selected="selected">@Model.KecamatanAsal</option>
+                }
+            </select>
         </div>
         <div class="col-12">
-            <input id="chkSame" class="form-check-input" type="checkbox" checked="checked" />
+            <input id="chkSame" asp-for="IsSame" class="form-check-input" type="checkbox" checked="checked" />
             <label class="form-check-label" for="chkSame">Wilayah penugasan sama dengan wilayah asal</label>
         </div>
         <div class="col-12 tugas" style="display:none;">
-            <label class="form-label" for="MyBidangTugas">Bidang Penugasa</label>
-            <select id="MyBidangTugas" class="form-control"></select>
+            <label class="form-label" for="MyBidangTugas">Bidang Penugasan</label>
+            <select id="MyBidangTugas" asp-for="Kendaraan.BidangPenugasanId" class="form-control">
+                @if (Model.BidangTugas != string.Empty)
+                {
+                    <option value="@Model.Kendaraan.BidangPenugasanId" selected="selected">@Model.BidangTugas</option>
+                }
+            </select>
         </div>
         <div class="col-12 col-md-6 tugas" style="display:none;">
             <label class="form-label" for="KotaTugas">Kota/Wilayah Penugasan</label>
-            <select id="KotaTugas" class="form-control"></select>
+            <select id="KotaTugas" asp-for="Kendaraan.KabupatenPenugasanId" class="form-control">
+                @if (Model.KabupatenTugas != string.Empty)
+                {
+                    <option value="@Model.Kendaraan.KabupatenPenugasanId" selected="selected">@Model.KabupatenTugas</option>
+                }
+            </select>
         </div>
         <div class="col-12 col-md-6 tugas" style="display:none;">
             <label class="form-label" for="KecamatanTugas">Kecamatan Penugasan</label>
-            <select id="KecamatanTugas" class="form-control"></select>
+            <select id="KecamatanTugas" asp-for="Kendaraan.KecamatanPenugasanId" class="form-control">
+                @if (Model.KecamatanTugas != string.Empty)
+                {
+                    <option value="@Model.Kendaraan.KecamatanPenugasanId" selected="selected">@Model.KecamatanTugas</option>
+                }
+            </select>
         </div>
         <div class="col-12 text-center mt-2 pt-50">
             <button type="submit" class="btn btn-success me-1">Submit</button>
