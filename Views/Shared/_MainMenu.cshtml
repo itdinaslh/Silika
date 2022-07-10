@@ -45,7 +45,7 @@
                             <li class='@(ViewBag.Title == "Bidang UPT/Dinas" ? "active" : "")'>
                                 <a asp-controller="Bidang" asp-action="Index">Bidang/UPT/Dinas</a>
                             </li>
-                            <li class='@(ViewBag.Title == "Pegawai" ? "active" : "")'>
+                            <li class='@(ViewBag.Title == "Master Pegawai" ? "active" : "")'>
                                 <a asp-controller="Pegawai" asp-action="Index">Pegawai</a>
                             </li>
                         </ul>
@@ -167,7 +167,9 @@
                     <li>
                         <a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Data Referensi">Data Referensi</span></a>
                         <ul class="menu-content">
-                            <li><a href="#">Jenis WR</a></li>
+                            <li class='@(ViewBag.Title == "Jenis WR" ? "active" : "")'>
+                                <a asp-action="Index" asp-controller="JenisWR">Jenis WR</a>
+                            </li>
                             <li><a href="#">Operator WR</a></li>
                             <li><a href="#">Lokasi WR</a></li>
                         </ul>

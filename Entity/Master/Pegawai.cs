@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Silika.Entity;
 
+[Table("Pegawai")]
 public class Pegawai
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]

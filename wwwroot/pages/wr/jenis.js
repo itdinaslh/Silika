@@ -25,7 +25,7 @@ function loadTable() {
             { data: "noRekening", name: "noRekening", autoWidth: true },
             {
                 data: 'jenisID',
-                render: function (data, type, row) { return "<button type='button' class='btn btn-sm btn-outline-success mr-2 showMe' style='width:100%;' data-href='/wr/jenis/edit/?jenisId=" + row.jenisID + "'> Edit</button>" }
+                render: function (data, type, row) { return "<button type='button' class='btn btn-sm btn-success mr-2 showMe' style='width:100%;' data-href='/wr/jenis/edit/?jenisId=" + row.jenisID + "'> Edit</button>" }
             }
         ],
         order: [[0, "desc"]]

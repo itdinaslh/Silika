@@ -18,6 +18,7 @@ public class KendaraanController : Controller
         this.repo = repo;
     }
 
+    [HttpGet("/master/kendaraan")]
     public IActionResult Index()
     {
         return View("~/Views/Transport/Kendaraan/Index.cshtml");
