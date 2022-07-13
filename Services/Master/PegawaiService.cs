@@ -32,7 +32,7 @@ public class PegawaiService : IPegawai
                 data.TglLahir = peg.TglLahir;
                 data.NoHP = peg.NoHP;
                 data.Email = peg.Email;
-                data.TipePegawai = peg.TipePegawai;
+                data.TipePegawaiId = peg.TipePegawaiId;
                 data.StatusAktif = peg.StatusAktif;
                 data.TahunMasuk = peg.TahunMasuk;
                 data.Catatan = peg.Catatan;

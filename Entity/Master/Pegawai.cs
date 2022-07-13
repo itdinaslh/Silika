@@ -33,7 +33,7 @@ public class Pegawai
     public string? Email { get; set; }
 
     [Required(ErrorMessage = "Tipe Pegawai Wajib Diisi")]
-    public int TipePegawai { get; set; }
+    public int TipePegawaiId { get; set; }
 
     [Required(ErrorMessage = "Status Aktif Wajib Dipilih")]
     public bool StatusAktif { get; set; }
@@ -61,8 +61,12 @@ public class Pegawai
     [MaxLength(15)]
     public Kelurahan? Kelurahan { get; set; }
 
+#nullable disable
+    public TipePegawai TipePegawai { get; set; }
+
     public DateTime? CreatedAt { get; set; } = DateTime.Now;
 
     public DateTime? UpdatedAt { get; set; } = DateTime.Now;
+
 
 }

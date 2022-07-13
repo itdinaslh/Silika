@@ -17,6 +17,9 @@ public class AppDbContext : DbContext {
 
     public DbSet<Kendaraan> Kendaraans { get; set; }
 
+    public DbSet<TipePegawai> TipePegawais { get; set; }
+
+    public DbSet<Penugasan> Penugasans { get; set; }
     public DbSet<Pegawai> Pegawais { get; set; }
 
 

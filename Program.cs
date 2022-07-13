@@ -36,6 +36,7 @@ services.AddDbContext<AppDbContext>(options => {
     services.AddScoped<IBidangRepo, BidangService>();
     services.AddScoped<IKendaraan, KendaraanService>();
     services.AddScoped<IPegawai, PegawaiService>();
+    services.AddScoped<IPenugasan, PenugasanService>();
 }
 
 services.AddAuthentication(options => {
