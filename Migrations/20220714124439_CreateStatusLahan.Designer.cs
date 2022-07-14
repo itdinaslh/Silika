@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Silika.Data;
@@ -11,9 +12,10 @@ using Silika.Data;
 namespace Silika.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220714124439_CreateStatusLahan")]
+    partial class CreateStatusLahan
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -537,9 +539,6 @@ namespace Silika.Migrations
                     b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("boolean");
-
                     b.Property<string>("NamaStatus")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -601,73 +600,6 @@ namespace Silika.Migrations
                     b.HasKey("TipePegawaiId");
 
                     b.ToTable("TipePegawai");
-                });
-
-            modelBuilder.Entity("Silika.Entity.Tps", b =>
-                {
-                    b.Property<int>("TpsId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("TpsId"));
-
-                    b.Property<string>("Alamat")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<DateTime?>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("boolean");
-
-                    b.Property<int>("JenisTpsId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("KelurahanID")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("character varying(15)");
-
-                    b.Property<string>("Keterangan")
-                        .HasColumnType("text");
-
-                    b.Property<string>("KodePos")
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
-
-                    b.Property<string>("Latitude")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
-
-                    b.Property<string>("Longitude")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
-
-                    b.Property<string>("NamaTps")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("character varying(150)");
-
-                    b.Property<int>("StatusLahanId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("TpsCode")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.HasKey("TpsId");
-
-                    b.HasIndex("JenisTpsId");
-
-                    b.HasIndex("KelurahanID");
-
-                    b.HasIndex("StatusLahanId");
-
-                    b.ToTable("Tps");
                 });
 
             modelBuilder.Entity("Silika.Entity.Kabupaten", b =>
@@ -806,31 +738,6 @@ namespace Silika.Migrations
                     b.Navigation("MerkKendaraan");
                 });
 
-            modelBuilder.Entity("Silika.Entity.Tps", b =>
-                {
-                    b.HasOne("Silika.Entity.JenisTps", null)
-                        .WithMany("Tps")
-                        .HasForeignKey("JenisTpsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Silika.Entity.Kelurahan", "Kelurahan")
-                        .WithMany("Tps")
-                        .HasForeignKey("KelurahanID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Silika.Entity.StatusLahan", "StatusLahan")
-                        .WithMany()
-                        .HasForeignKey("StatusLahanId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Kelurahan");
-
-                    b.Navigation("StatusLahan");
-                });
-
             modelBuilder.Entity("Silika.Entity.Bidang", b =>
                 {
                     b.Navigation("KendaraanAsal");
@@ -843,11 +750,6 @@ namespace Silika.Migrations
             modelBuilder.Entity("Silika.Entity.JenisKendaraan", b =>
                 {
                     b.Navigation("Kendaraans");
-                });
-
-            modelBuilder.Entity("Silika.Entity.JenisTps", b =>
-                {
-                    b.Navigation("Tps");
                 });
 
             modelBuilder.Entity("Silika.Entity.Kabupaten", b =>
@@ -875,8 +777,6 @@ namespace Silika.Migrations
             modelBuilder.Entity("Silika.Entity.Kelurahan", b =>
                 {
                     b.Navigation("Pegawais");
-
-                    b.Navigation("Tps");
                 });
 
             modelBuilder.Entity("Silika.Entity.MerkKendaraan", b =>

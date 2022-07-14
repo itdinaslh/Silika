@@ -16,4 +16,6 @@ public class JenisTps {
     public DateTime? CreatedAt { get; set; } = DateTime.Now;
 
     public DateTime? UpdatedAt { get; set; } = DateTime.Now;
+
+    public List<Tps> Tps { get; set; }
 }

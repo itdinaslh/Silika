@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Silika.Data;
@@ -11,9 +12,10 @@ using Silika.Data;
 namespace Silika.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220714162949_CreateTps")]
+    partial class CreateTps
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -615,12 +617,6 @@ namespace Silika.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("boolean");
-
                     b.Property<int>("JenisTpsId")
                         .HasColumnType("integer");
 
@@ -644,20 +640,12 @@ namespace Silika.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
-                    b.Property<string>("NamaTps")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("character varying(150)");
-
                     b.Property<int>("StatusLahanId")
                         .HasColumnType("integer");
 
                     b.Property<string>("TpsCode")
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("TpsId");
 

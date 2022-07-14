@@ -27,6 +27,8 @@ public class Kelurahan {
 
     public Kecamatan Kecamatan { get; set; }
 
+    public List<Tps> Tps { get; set; }
+
 #nullable enable
 
     public List<Pegawai>? Pegawais { get; set; }

@@ -1,0 +1,90 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["title"] = "Master Status Lahan";
+}
+
+@section vendorcss {
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/responsive.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/buttons.bootstrap5.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/tables/datatable/rowGroup.bootstrap5.min.css">
+    <link rel="stylesheet" href="~/lib/sweetalert/sweetalert2.min.css" />
+}
+
+<!--Modal Window-->
+<div id='myModal' class='modal fade' data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div id='myModalContent'></div>
+        </div>
+    </div>
+</div>
+
+<div class="page-content">
+    <div class="container-fluid">        
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center
+                    justify-content-between">
+                    <h4 class="mb-sm-0 font-size-18">Master Status Lahan</h4>
+
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="javascript:
+                                    void(0);">Administrator</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:
+                                    void(0);">Data Referensi</a></li>        
+                            <li class="breadcrumb-item active">Status Lahan</li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+            <div class="col-12">
+                <button class="btn btn-primary showMe" style="margin-bottom:20px; margin-top:20px;" data-href="/master/status-lahan/create">Tambah Status Lahan</button>
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Status Lahan</h4>
+                        <div class="dropdown chart-dropdown">
+                            <i data-feather="more-vertical" class="font-medium-3 cursor-pointer" data-bs-toggle="dropdown"></i>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <button class="dropdown-item showMe" data-href="/master/status-lahan/create">Tambah Status Lahan</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table id="tblData" class="table table-bordered dt-responsive nowrap w-100">
+                            <thead>
+                                <tr>
+                                    <th>No</th>                                    
+                                    <th>Nama Status Lahan</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section vendorjs {
+    <script src="~/lib/sweetalert/sweetalert2.all.min.js"></script>
+    <!-- Required datatable js -->
+    <script src="~/app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js"></script>
+    <script src="~/app-assets/vendors/js/tables/datatable/dataTables.bootstrap5.min.js"></script>
+    <script src="~/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js"></script>
+    <script src="~/app-assets/vendors/js/tables/datatable/responsive.bootstrap5.min.js"></script>    
+}
+
+@section scripts {       
+    <script src="~/pages/master/statuslahan.js"></script>
+    <script src="~/js/modalForm.js"></script>    
+}

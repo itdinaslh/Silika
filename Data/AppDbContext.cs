@@ -21,6 +21,8 @@ public class AppDbContext : DbContext {
 
     public DbSet<Penugasan> Penugasans { get; set; }
     public DbSet<Pegawai> Pegawais { get; set; }
+    public DbSet<StatusLahan> StatusLahans { get; set; }
+    public DbSet<Tps> Tps { get; set; }
 
 
     // Wilayah

@@ -45,6 +45,9 @@
                             <li class='@(ViewBag.Title == "Bidang UPT/Dinas" ? "active" : "")'>
                                 <a asp-controller="Bidang" asp-action="Index">Bidang/UPT/Dinas</a>
                             </li>
+                            <li class='@(ViewBag.Title == "Master Status Lahan" ? "active" : "")'>
+                                <a asp-controller="StatusLahan" asp-action="Index">Status Lahan</a>
+                            </li>
                             <li class='@(ViewBag.Title == "Master Penugasan" ? "active" : "")'>
                                 <a asp-controller="Penugasan" asp-action="Index">Penugasan</a>
                             </li>
@@ -87,7 +90,9 @@
                             <li class='@(ViewBag.Title == "Jenis TPS" ? "active" : "")'>
                                 <a asp-controller="JenisTps" asp-action="Index">Jenis TPS</a>
                             </li>
-                            <li><a href="#">Lokasi TPS</a></li>
+                            <li class='@(ViewBag.Title == "Lokasi TPS" ? "active" : "")'>
+                                <a asp-controller="Tps" asp-action="Index">Lokasi TPS</a>
+                            </li>
                             <li><a href="#">Bengkel</a></li>
                             <li><a href="#">Timbulan Sampah</a></li>
                             <li><a href="#">Lok. Penanganan Sungai</a></li>
