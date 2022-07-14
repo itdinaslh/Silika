@@ -45,7 +45,7 @@ namespace Silika.Migrations
 
                     b.HasKey("BidangID");
 
-                    b.ToTable("Bidang");
+                    b.ToTable("Bidang", (string)null);
                 });
 
             modelBuilder.Entity("Silika.Entity.JenisKendaraan", b =>
@@ -73,7 +73,7 @@ namespace Silika.Migrations
 
                     b.HasKey("JenisID");
 
-                    b.ToTable("JenisKendaraan");
+                    b.ToTable("JenisKendaraan", (string)null);
                 });
 
             modelBuilder.Entity("Silika.Entity.JenisPencemaran", b =>
@@ -96,7 +96,7 @@ namespace Silika.Migrations
 
                     b.HasKey("JenisID");
 
-                    b.ToTable("JenisPencemaran");
+                    b.ToTable("JenisPencemaran", (string)null);
                 });
 
             modelBuilder.Entity("Silika.Entity.JenisTps", b =>
@@ -120,7 +120,7 @@ namespace Silika.Migrations
 
                     b.HasKey("JenisID");
 
-                    b.ToTable("JenisTps");
+                    b.ToTable("JenisTps", (string)null);
                 });
 
             modelBuilder.Entity("Silika.Entity.JenisWr", b =>
@@ -143,7 +143,7 @@ namespace Silika.Migrations
 
                     b.HasKey("JenisID");
 
-                    b.ToTable("JenisWr");
+                    b.ToTable("JenisWr", (string)null);
                 });
 
             modelBuilder.Entity("Silika.Entity.Kabupaten", b =>
@@ -176,7 +176,7 @@ namespace Silika.Migrations
 
                     b.HasIndex("ProvinsiID");
 
-                    b.ToTable("Kabupaten");
+                    b.ToTable("Kabupaten", (string)null);
                 });
 
             modelBuilder.Entity("Silika.Entity.Kecamatan", b =>
@@ -206,7 +206,7 @@ namespace Silika.Migrations
 
                     b.HasIndex("KabupatenID");
 
-                    b.ToTable("Kecamatan");
+                    b.ToTable("Kecamatan", (string)null);
                 });
 
             modelBuilder.Entity("Silika.Entity.Kelurahan", b =>
@@ -236,7 +236,7 @@ namespace Silika.Migrations
 
                     b.HasIndex("KecamatanID");
 
-                    b.ToTable("Kelurahan");
+                    b.ToTable("Kelurahan", (string)null);
                 });
 
             modelBuilder.Entity("Silika.Entity.Kendaraan", b =>
@@ -330,7 +330,7 @@ namespace Silika.Migrations
 
                     b.HasIndex("TipeKendaraanId");
 
-                    b.ToTable("Kendaraan");
+                    b.ToTable("Kendaraan", (string)null);
                 });
 
             modelBuilder.Entity("Silika.Entity.MerkKendaraan", b =>
@@ -361,7 +361,7 @@ namespace Silika.Migrations
 
                     b.HasKey("MerkKendaraanId");
 
-                    b.ToTable("MerkKendaraan");
+                    b.ToTable("MerkKendaraan", (string)null);
                 });
 
             modelBuilder.Entity("Silika.Entity.NilaiPencemaran", b =>
@@ -394,7 +394,7 @@ namespace Silika.Migrations
 
                     b.HasKey("NilaiID");
 
-                    b.ToTable("NilaiPencemaran");
+                    b.ToTable("NilaiPencemaran", (string)null);
                 });
 
             modelBuilder.Entity("Silika.Entity.Pegawai", b =>
@@ -469,7 +469,7 @@ namespace Silika.Migrations
 
                     b.HasIndex("TipePegawaiId");
 
-                    b.ToTable("Pegawai");
+                    b.ToTable("Pegawai", (string)null);
                 });
 
             modelBuilder.Entity("Silika.Entity.Penugasan", b =>
@@ -490,7 +490,7 @@ namespace Silika.Migrations
 
                     b.HasKey("PenugasanId");
 
-                    b.ToTable("Penugasan");
+                    b.ToTable("Penugasan", (string)null);
                 });
 
             modelBuilder.Entity("Silika.Entity.Provinsi", b =>
@@ -523,7 +523,7 @@ namespace Silika.Migrations
 
                     b.HasKey("ProvinsiID");
 
-                    b.ToTable("Provinsi");
+                    b.ToTable("Provinsi", (string)null);
                 });
 
             modelBuilder.Entity("Silika.Entity.StatusLahan", b =>
@@ -550,7 +550,7 @@ namespace Silika.Migrations
 
                     b.HasKey("StatusLahanId");
 
-                    b.ToTable("StatusLahan");
+                    b.ToTable("StatusLahan", (string)null);
                 });
 
             modelBuilder.Entity("Silika.Entity.TipeKendaraan", b =>
@@ -579,7 +579,7 @@ namespace Silika.Migrations
 
                     b.HasIndex("MerkKendaraanId");
 
-                    b.ToTable("TipeKendaraan");
+                    b.ToTable("TipeKendaraan", (string)null);
                 });
 
             modelBuilder.Entity("Silika.Entity.TipePegawai", b =>
@@ -600,7 +600,7 @@ namespace Silika.Migrations
 
                     b.HasKey("TipePegawaiId");
 
-                    b.ToTable("TipePegawai");
+                    b.ToTable("TipePegawai", (string)null);
                 });
 
             modelBuilder.Entity("Silika.Entity.Tps", b =>
@@ -667,7 +667,7 @@ namespace Silika.Migrations
 
                     b.HasIndex("StatusLahanId");
 
-                    b.ToTable("Tps");
+                    b.ToTable("Tps", (string)null);
                 });
 
             modelBuilder.Entity("Silika.Entity.Kabupaten", b =>

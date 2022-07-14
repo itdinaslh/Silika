@@ -44,6 +44,8 @@ public class Tps
 
     public StatusLahan StatusLahan { get; set; }
 
+    public JenisTps JenisTps { get; set; }
+
     public bool? IsDeleted { get; set; } = false;
 
     public DateTime? CreatedAt { get; set; } = DateTime.Now;
