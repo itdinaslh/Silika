@@ -18,11 +18,13 @@ public class JenisKendaraanService : IJenisKendaraanRepo {
             await context.AddAsync(jenis);
         } else {
             JenisKendaraan? jns = await context.JenisKendaraans.FirstOrDefaultAsync(j => j.JenisID == jenis.JenisID);
-            jns.KodeJenis = jenis.KodeJenis;
-            jns.NamaJenis = jenis.NamaJenis;
-            jns.UpdatedAt = DateTime.Now;
+            if (jns is not null) {
+                jns.KodeJenis = jenis.KodeJenis;
+                jns.NamaJenis = jenis.NamaJenis;
+                jns.UpdatedAt = DateTime.Now;
 
-            context.Update(jns);
+                context.Update(jns);
+            }
         }
 
         await context.SaveChangesAsync();
