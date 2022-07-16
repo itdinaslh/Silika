@@ -23,5 +23,33 @@
             <label class="form-label" for="NoDoor">Kode TPS</label>
             <input type="text" id="KodeTPS" asp-for="Tps.TpsCode" class="form-control" placeholder="Kode TPS" />
         </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label" for="JenisTPS">Jenis TPS</label>
+            <select id="JenisTPS" asp-for="Tps.JenisTpsId" class="form-control"></select>
+            <span asp-validation-for="Tps.JenisTpsId" class="text-danger"></span>
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label" for="StatusLahan">Status Lahan</label>
+            <select id="StatusLahan" asp-for="Tps.StatusLahanId" class="form-control"></select>
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label" for="Kota">Kota / Kabupaten</label>
+            <select id="Kota" asp-for="KotaID" class="form-control"></select>
+            <span asp-validation-for="KotaID" class="text-danger"></span>
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label" for="Kecamatan">Kecamatan</label>
+            <select id="Kecamatan" asp-for="KecamatanID" class="form-control" disabled></select>
+            <span asp-validation-for="KecamatanID" class="text-danger"></span>
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label" for="Kelurahan">Kelurahan</label>
+            <select id="Kelurahan" asp-for="Tps.KelurahanID" class="form-control" disabled></select>
+            <span asp-validation-for="Tps.KelurahanID" class="text-danger"></span>
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label" for="KodePos">Kode Pos</label>
+            <input type="text" asp-for="Tps.KodePos" class="form-control" />            
+        </div>
     </form>
 </div>

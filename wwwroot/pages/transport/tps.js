@@ -39,3 +39,135 @@ function loadTable() {
         order: [[0, "desc"]]
     })
 }
+
+$(document).on('shown.bs.modal', function () {
+    // initiate select2 for kecamatan
+    $('#Kecamatan').select2({
+        placeholder: 'Pilih Kecamatan...'
+    });
+
+    // Jenis TPS API search
+    $('#JenisTPS').select2({
+        placeholder: 'Pilih Jenis TPS...',
+        dropdownParent: $('#myModal'),
+        allowClear: true,
+        ajax: {
+            url: "/api/transport/jenis-tps/search",
+            contentType: "application/json; charset=utf-8",
+            data: function (params) {
+                var query = {
+                    term: params.term,
+                };
+                return query;
+            },
+            processResults: function (result) {
+                return {
+                    results: $.map(result, function (item) {
+                        return {
+                            text: item.namaJenis,
+                            id: item.id
+                        }
+                    })
+                }
+            },
+            cache: true
+        }
+    });
+
+    // Status Lahan API search
+    $('#StatusLahan').select2({
+        placeholder: 'Pilih Status Lahan...',
+        dropdownParent: $('#myModal'),
+        allowClear: true,
+        ajax: {
+            url: "/api/master/status-lahan/search",
+            contentType: "application/json; charset=utf-8",
+            data: function (params) {
+                var query = {
+                    term: params.term,
+                };
+                return query;
+            },
+            processResults: function (result) {
+                return {
+                    results: $.map(result, function (item) {
+                        return {
+                            text: item.namaStatus,
+                            id: item.id
+                        }
+                    })
+                }
+            },
+            cache: true
+        }
+    });
+
+    // Kabupaten asal api search
+    $('#Kota').select2({
+        placeholder: 'Pilih Kota/Kabupaten...',
+        dropdownParent: $('#myModal'),
+        allowClear: true,
+        ajax: {
+            url: "/api/master/kabupaten/search",
+            contentType: "application/json; charset=utf-8",
+            data: function (params) {
+                var query = {
+                    term: params.term,
+                };
+                return query;
+            },
+            processResults: function (result) {
+                return {
+                    results: $.map(result, function (item) {
+                        return {
+                            text: item.namaKabupaten,
+                            id: item.id
+                        }
+                    })
+                }
+            },
+            cache: true
+        }
+    });
+
+    $('#Kota').change(function () {
+        var thisKab = this.value;
+
+        if (thisKab == '') {
+            $('#Kecamatan').prop("disabled", true);
+        } else {
+            $('#Kecamatan').prop("disabled", false);
+            $('#Kecamatan').val(null).trigger('change');
+            PopulateKecamatan(thisKab);
+        }
+    });
+});
+
+function PopulateKecamatan(kab) {
+    $('#Kecamatan').select2({
+        placeholder: 'Pilih Kecamatan...',
+        dropdownParent: $('#myModal'),
+        allowClear: true,
+        ajax: {
+            url: "/api/master/kecamatan/search/?kab=" + kab,
+            contentType: "application/json; charset=utf-8",
+            data: function (params) {
+                var query = {
+                    term: params.term,
+                };
+                return query;
+            },
+            processResults: function (result) {
+                return {
+                    results: $.map(result, function (item) {
+                        return {
+                            text: item.namaKecamatan,
+                            id: item.id
+                        }
+                    })
+                }
+            },
+            cache: true
+        }
+    });
+}

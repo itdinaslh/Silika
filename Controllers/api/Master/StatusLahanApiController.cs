@@ -49,4 +49,18 @@ public class StatusLahanApiController : ControllerBase
 
         return Ok(jsonData);
     }
+
+    [HttpGet("/api/master/status-lahan/search")]
+    public async Task<IActionResult> SearchMerk(string? term)
+    {
+        var data = await repo.StatusLahans
+            .Where(k => !String.IsNullOrEmpty(term) ?
+                k.NamaStatus.ToLower().Contains(term.ToLower()) : true
+            ).Select(s => new {
+                id = s.StatusLahanId,
+                namaStatus = s.NamaStatus
+            }).Take(10).ToListAsync();
+
+        return Ok(data);
+    }
 }
