@@ -1,0 +1,27 @@
+@model TpsViewModel
+
+<div class="modal-header bg-transparent">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+
+<div class="modal-body pb-5 px-sm-5 pt-50">
+    <div class="text-center mb-2">
+        @if (Model.Tps.TpsId == 0) {
+            <h1 class="mb-1">Tambah TPS</h1>
+        } else {
+            <h1 class="mb-1">Edit TPS</h1>
+        }        
+    </div>
+    <form action="/transport/kendaraan/store" method="post" class="row gy-1 pt-75">
+        <input type="hidden" asp-for="Tps.TpsId">
+        <div class="col-12 col-md-6">
+            <label class="form-label" for="NamaTPS">Nama TPS</label>
+            <input type="text" id="NamaTPS" asp-for="Tps.NamaTps" class="form-control" placeholder="Nama TPS" autofocus />
+            <span asp-validation-for="Tps.NamaTps" class="text-danger"></span>
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label" for="NoDoor">Kode TPS</label>
+            <input type="text" id="KodeTPS" asp-for="Tps.TpsCode" class="form-control" placeholder="Kode TPS" />
+        </div>
+    </form>
+</div>
