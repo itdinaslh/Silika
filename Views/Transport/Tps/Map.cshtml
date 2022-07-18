@@ -1,0 +1,59 @@
+@{
+    Layout = "_Layout";
+    ViewData["title"] = "Lokasi TPS";
+}
+
+@section vendorcss {
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/maps/leaflet.min.css">
+}
+
+@section styles {
+    <link rel="stylesheet" type="text/css" href="~/app-assets/css/plugins/maps/map-leaflet.css">
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center
+                    justify-content-between">
+                    <h4 class="mb-sm-0 font-size-18">Lokasi TPS</h4>
+
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="javascript:
+                                    void(0);">Transportasi Sampah</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:
+                                    void(0);">Data Referensi</a></li>        
+                            <li class="breadcrumb-item active">Peta TPS</li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+
+        <section class="map-leaflet">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="leaflet-map" id="layer-control" style="height: 700px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+@section vendorjs {
+    <script src="~/app-assets/vendors/js/maps/leaflet.min.js"></script>
+}
+
+@section scripts {       
+    <script src="~/pages/transport/maptps.js"></script>      
+}
+

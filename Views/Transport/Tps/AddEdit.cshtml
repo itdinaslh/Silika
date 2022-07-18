@@ -12,11 +12,11 @@
             <h1 class="mb-1">Edit TPS</h1>
         }        
     </div>
-    <form action="/transport/kendaraan/store" method="post" class="row gy-1 pt-75">
+    <form action="/transport/tps/store" method="post" class="row gy-1 pt-75">
         <input type="hidden" asp-for="Tps.TpsId">
         <div class="col-12 col-md-6">
             <label class="form-label" for="NamaTPS">Nama TPS</label>
-            <input type="text" id="NamaTPS" asp-for="Tps.NamaTps" class="form-control" placeholder="Nama TPS" autofocus />
+            <input type="text" id="NamaTPS" asp-for="Tps.NamaTps" class="form-control" placeholder="Nama TPS" autofocus required />
             <span asp-validation-for="Tps.NamaTps" class="text-danger"></span>
         </div>
         <div class="col-12 col-md-6">
@@ -25,31 +25,72 @@
         </div>
         <div class="col-12 col-md-6">
             <label class="form-label" for="JenisTPS">Jenis TPS</label>
-            <select id="JenisTPS" asp-for="Tps.JenisTpsId" class="form-control"></select>
+            <select id="JenisTPS" asp-for="Tps.JenisTpsId" class="form-control" required>
+                @if (Model.JenisTps is not null) {
+                    <option value="@Model.Tps.JenisTpsId">@Model.JenisTps</option>
+                }
+            </select>
             <span asp-validation-for="Tps.JenisTpsId" class="text-danger"></span>
         </div>
         <div class="col-12 col-md-6">
             <label class="form-label" for="StatusLahan">Status Lahan</label>
-            <select id="StatusLahan" asp-for="Tps.StatusLahanId" class="form-control"></select>
+            <select id="StatusLahan" asp-for="Tps.StatusLahanId" class="form-control">
+                @if (Model.StatusLahan is not null) {
+                    <option value="@Model.Tps.StatusLahanId">@Model.StatusLahan</option>
+                }
+            </select>
         </div>
         <div class="col-12 col-md-6">
             <label class="form-label" for="Kota">Kota / Kabupaten</label>
-            <select id="Kota" asp-for="KotaID" class="form-control"></select>
+            <select id="Kota" asp-for="KotaID" class="form-control" required>
+                @if (Model.KotaID is not null) {
+                    <option value="@Model.KotaID" selected="selected">@Model.NamaKota</option>
+                }
+            </select>
             <span asp-validation-for="KotaID" class="text-danger"></span>
         </div>
         <div class="col-12 col-md-6">
             <label class="form-label" for="Kecamatan">Kecamatan</label>
-            <select id="Kecamatan" asp-for="KecamatanID" class="form-control" disabled></select>
+            <select id="Kecamatan" asp-for="KecamatanID" class="form-control" disabled='@(Model.KecamatanID is not null ? "true" : "false")' required>
+                @if (Model.KecamatanID is not null) {
+                    <option value="@Model.KecamatanID" selected="selected">@Model.NamaKecamatan</option>
+                }
+            </select>
             <span asp-validation-for="KecamatanID" class="text-danger"></span>
         </div>
         <div class="col-12 col-md-6">
             <label class="form-label" for="Kelurahan">Kelurahan</label>
-            <select id="Kelurahan" asp-for="Tps.KelurahanID" class="form-control" disabled></select>
+            <select id="Kelurahan" asp-for="Tps.KelurahanID" class="form-control" disabled required>
+                @if (Model.NamaKelurahan is not null) {
+                    <option value="@Model.Tps.KelurahanID" selected="selected">@Model.NamaKelurahan</option>
+                }
+            </select>
             <span asp-validation-for="Tps.KelurahanID" class="text-danger"></span>
         </div>
         <div class="col-12 col-md-6">
             <label class="form-label" for="KodePos">Kode Pos</label>
-            <input type="text" asp-for="Tps.KodePos" class="form-control" />            
+            <input type="text" asp-for="Tps.KodePos" class="form-control" />
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label" for="Latitude">Latitude</label>
+            <input type="text" id="Latitude" asp-for="Tps.Latitude" class="form-control" />
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label" for="Longitude">Longitude</label>
+            <input type="text" id="Longitude" asp-for="Tps.Longitude" class="form-control" />
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label" for="Alamat">Alamat</label>
+            <textarea id="Alamat" class="form-control" asp-for="Tps.Alamat" rows="3" required></textarea>
+            <span asp-validation-for="Tps.Alamat" class="text-danger"></span>
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label" for="Keterangan">Keterangan</label>
+            <textarea id="Keterantan" class="form-control" asp-for="Tps.Keterangan" rows="3"></textarea>            
+        </div>
+        <div class="col-12 text-center mt-2 pt-50">
+            <button type="submit" class="btn btn-success me-1">Submit</button>
+            <button type="reset" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Tutup</button>
         </div>
     </form>
 </div>

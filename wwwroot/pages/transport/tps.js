@@ -41,9 +41,13 @@ function loadTable() {
 }
 
 $(document).on('shown.bs.modal', function () {
-    // initiate select2 for kecamatan
+    // initiate select2 for kecamatan & kelurahan    
     $('#Kecamatan').select2({
         placeholder: 'Pilih Kecamatan...'
+    });
+    
+    $('#Kelurahan').select2({
+        placeholder: 'Pilih Kelurahan...'
     });
 
     // Jenis TPS API search
@@ -141,9 +145,22 @@ $(document).on('shown.bs.modal', function () {
             PopulateKecamatan(thisKab);
         }
     });
+
+    $('#Kecamatan').change(function () {
+        var thisKec = this.value;
+
+        if (thisKec == '') {
+            $('#Kelurahan').prop("disabled", true);
+        } else {
+            $('#Kelurahan').prop("disabled", false);
+            $('#Kelurahan').val(null).trigger('change');
+            PopulateKelurahan(thisKec);
+        }
+    });
 });
 
 function PopulateKecamatan(kab) {
+    $('#Kecamatan').select2("destroy");
     $('#Kecamatan').select2({
         placeholder: 'Pilih Kecamatan...',
         dropdownParent: $('#myModal'),
@@ -162,6 +179,36 @@ function PopulateKecamatan(kab) {
                     results: $.map(result, function (item) {
                         return {
                             text: item.namaKecamatan,
+                            id: item.id
+                        }
+                    })
+                }
+            },
+            cache: true
+        }
+    });
+}
+
+function PopulateKelurahan(kab) {
+    $('#Kelurahan').select2("destroy");
+    $('#Kelurahan').select2({
+        placeholder: 'Pilih Kelurahan...',
+        dropdownParent: $('#myModal'),
+        allowClear: true,
+        ajax: {
+            url: "/api/master/kelurahan/search/?kec=" + kab,
+            contentType: "application/json; charset=utf-8",
+            data: function (params) {
+                var query = {
+                    term: params.term,
+                };
+                return query;
+            },
+            processResults: function (result) {
+                return {
+                    results: $.map(result, function (item) {
+                        return {
+                            text: item.namaKelurahan,
                             id: item.id
                         }
                     })

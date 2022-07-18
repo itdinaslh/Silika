@@ -57,4 +57,20 @@ public class KelurahanApiController : Controller {
         
         return Ok(jsonData);
     }
+
+    #nullable enable
+    [HttpGet("/api/master/kelurahan/search")]
+    public async Task<IActionResult> SearchKecamatan(string kec, string? term)
+    {
+        var data = await repo.Kelurahans
+            .Where(a => a.KecamatanID == kec)
+            .Where(k => !String.IsNullOrEmpty(term) ?
+                k.NamaKelurahan.ToLower().Contains(term.ToLower()) : true
+            ).Select(s => new {
+                id = s.KelurahanID,
+                namaKelurahan = s.NamaKelurahan
+            }).Take(10).ToListAsync();
+
+        return Ok(data);
+    }
 }

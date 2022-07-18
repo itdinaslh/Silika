@@ -12,5 +12,16 @@ public class TpsViewModel {
 
     [Required(ErrorMessage = "Harap Pilih Kecamatan")]
     public string KecamatanID { get; set; }
+
+    #nullable enable
+
+    public string? NamaKota { get; set; }
+    public string? NamaKecamatan { get; set; }
+
+    public string? JenisTps { get; set; }
+
+    public string? NamaKelurahan { get; set; }
+
+    public string? StatusLahan { get; set; }
     
 }
