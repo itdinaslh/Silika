@@ -34,6 +34,7 @@ public class AppDbContext : DbContext {
 
     // Usaha
     public DbSet<LimbahB3> LimbahB3s { get; set; }
+    public DbSet<KategoriUSK> KategoriUSKs { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

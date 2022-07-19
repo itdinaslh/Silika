@@ -42,6 +42,7 @@ services.AddDbContext<AppDbContext>(options => {
 
     // Usaha Kegiatan
     services.AddScoped<ILimbahB3, LimbahB3Service>();
+    services.AddScoped<IKategoriUSK, KategoriUSKService>();
 }
 
 services.AddAuthentication(options => {
