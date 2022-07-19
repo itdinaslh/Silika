@@ -39,6 +39,9 @@ services.AddDbContext<AppDbContext>(options => {
     services.AddScoped<IPenugasan, PenugasanService>();
     services.AddScoped<IStatusLahan, StatusLahanService>();
     services.AddScoped<ITps, TpsService>();
+
+    // Usaha Kegiatan
+    services.AddScoped<ILimbahB3, LimbahB3Service>();
 }
 
 services.AddAuthentication(options => {

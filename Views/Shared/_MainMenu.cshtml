@@ -245,7 +245,9 @@
                         <ul class="menu-content">
                             <li><a href="#">Petugas</a></li>
                             <li><a href="#">Kegiatan Usaha</a></li>
-                            <li><a href="#">Limbah B3</a></li>
+                            <li class='@(ViewBag.Title == "Limbah B3" ? "active" : "")'>
+                                <a asp-controller="LimbahB3" asp-action="Index">Limbah B3</a>
+                            </li>
                             <li><a href="#">Tempat Pembuangan Limbah</a></li>
                             <li><a href="#">Kategori USK</a></li>
                             <li><a href="#">Narasi Kegiatan Usaha</a></li>

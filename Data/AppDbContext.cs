@@ -32,6 +32,9 @@ public class AppDbContext : DbContext {
     public DbSet<Kelurahan> Kelurahans { get; set; }
     public DbSet<Bidang> Bidangs { get; set; }
 
+    // Usaha
+    public DbSet<LimbahB3> LimbahB3s { get; set; }
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.Entity<Kendaraan>()

@@ -1,24 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Dynamic.Core;
-
-using Silika.Entity;
 using Silika.Repository;
 
 namespace Silika.Controllers.api;
 
 [Route("api/[controller]")]
 [ApiController]
-public class KendaraanApiController : ControllerBase
-{
-    private readonly IKendaraan repo;
+public class LimbahB3ApiController : ControllerBase {
+    private readonly ILimbahB3 repo;
 
-    public KendaraanApiController(IKendaraan repo)
-    {
+    public LimbahB3ApiController(ILimbahB3 repo) {
         this.repo = repo;
     }
 
-    [HttpPost("/api/transport/kendaraan")]
+    [HttpPost("/api/usaha/limbahb3")]
     public async Task<IActionResult> PegawaiTable() {
         var draw = Request.Form["draw"].FirstOrDefault();
         var start = Request.Form["start"].FirstOrDefault();
@@ -30,16 +26,7 @@ public class KendaraanApiController : ControllerBase
         int skip = start != null ? Convert.ToInt32(start) : 0;
         int recordsTotal = 0;
 
-        var init = repo.Kendaraans.Select(x => new
-        {
-            kendaraanId = x.KendaraanId,
-            noPolisi = x.NoPolisi,
-            jenis = x.JenisKendaraan.NamaJenis,
-            tahun = x.TahunPengadaan,
-            bidang = x.BidangPenugasan!.NamaBidang,
-            kabupaten = x.KabupatenPenugasan!.NamaKabupaten,
-            kecamatan = x.KecamatanPenugasan!.NamaKecamatan
-        });
+        var init = repo.LimbahB3s;
 
         if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection)))
         {
@@ -48,7 +35,9 @@ public class KendaraanApiController : ControllerBase
 
         if (!string.IsNullOrEmpty(searchValue))
         {
-            init = init.Where(a => a.noPolisi.ToLower().Contains(searchValue.ToLower()));
+            init = init.Where(a => a.NamaLimbah.ToLower().Contains(searchValue.ToLower())
+                || a.KodeLimbah.ToLower().Contains(searchValue.ToLower())
+            );
         }
 
         recordsTotal = init.Count();

@@ -1,0 +1,30 @@
+@model LimbahB3
+
+<div class="modal-header">
+    @if (Model.LimbahB3Id == 0) {
+        <h4 class="modal-title">Tambah Limbah B3</h4>
+    } else {
+        <h4 class="modal-title">Edit Limbah B3</h4>
+    }
+
+    <button type="button" class="btn-close" data-bs-dismiss="modal">&times;</button>
+</div>
+<div class="modal-body mx-50 pb-3">
+    <form action="/usaha/limbahb3/store" class="row gy-1 gx-2 mt-75" method="post">
+        <input type="hidden" asp-for="LimbahB3Id" />
+        <div class="col-12">
+            <label class="form-label">Kode Limbah B3</label>              
+            <input type="text" asp-for="KodeLimbah" class="form-control" autocomplete="off" autofocus />
+            <span asp-validation-for="KodeLimbah" class="text-danger"></span>
+        </div>   
+        <div class="col-12">
+            <label class="form-label">Nama Limbah B3</label>              
+            <input type="text" asp-for="NamaLimbah" class="form-control" autocomplete="off" />
+            <span asp-validation-for="NamaLimbah" class="text-danger"></span>
+        </div>
+        <div class="col-12 text-end mt-2">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
+            <button type="submit" class="btn btn-success">Simpan</button>
+        </div>
+    </form>
+</div>
