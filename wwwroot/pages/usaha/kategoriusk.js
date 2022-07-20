@@ -28,7 +28,7 @@ function loadTable() {
             { data: "kategoriUSKId", name: "kategoriUSKId", autoWidth: true },            
             { data: "namaKategori", name: "namaKategori", autoWidth: true },          
             {
-                data: 'limbahB3Id',
+                data: 'kategoriUSKId',
                 render: function (data, type, row) { return "<button type='button' class='btn btn-sm btn-success mr-2 showMe' style='width:100%;' data-href='/usaha/kategoriusk/edit/?id=" + row.kategoriUSKId + "'> Edit</button>" }
             }
         ],
