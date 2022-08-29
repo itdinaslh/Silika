@@ -19,6 +19,9 @@ public class HomeController : Controller
     [HttpGet("/")]    
     public IActionResult Index()
     {
+        var claimsIdentity = User.Identity;
+        ViewBag.Claims = claimsIdentity;
+
         return View();
     }
 
