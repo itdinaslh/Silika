@@ -47,37 +47,6 @@ public class BidangApiController : Controller {
         
         return Ok(jsonData);
     }
-
-    // [HttpGet("/api/master/bidang/spa")]
-    // public async Task<IActionResult> Bidangs(int pageSize, string query, int currentPage = 1) {
-    //     var start = repo.Bidangs
-    //         .Where(b => !String.IsNullOrEmpty(query) ? 
-    //             b.NamaBidang.ToLower().Contains(query.ToLower()) || b.KepalaBidang.ToLower().Contains(query.ToLower()) : true
-    //         );
-
-    //     var data = await start
-    //         .Skip((currentPage - 1) * pageSize)
-    //         .Take(pageSize)
-    //         .OrderByDescending(b => b.BidangID)
-    //         .ToListAsync();
-
-    //     var bidangs = new BidangResponse(data, start.Count());
-
-    //     return Ok(bidangs);
-    // }
-
-    // [HttpPut("/api/master/bidang/save")]
-    // public async Task<IActionResult> SaveBidangApi(Bidang bidang) {
-    //     if (ModelState.IsValid) {                      
-    //         await repo.SaveBidangAsync(bidang);
-    //         await _bidangHubContext.Clients.All.SendAsync("TableUpdated");
-    //     } else {
-    //         return BadRequest();
-    //     }
-
-    //     return Ok();
-    // }
-
     
     [HttpGet("/api/master/bidang/getbyid")]
     public async Task<JsonResult> GetDataById(Guid bidangId) {
